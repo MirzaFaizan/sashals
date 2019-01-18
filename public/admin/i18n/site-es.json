@@ -1,0 +1,87 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile-Thai",
+    "PROFILEDES": "Make a changes-Thai",
+    "LOGOUT": "Logout-Thai",
+    "LOGOUTDES": "Leave admin-Thai"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!-Thai"
+  },
+  "category": {
+    "TITLE": "Add New Category-Thai",
+    "FORM": {
+      "CATEGORY-NAME": "Category Name-Thai",
+      "BUTTON": "ADD-Thai"
+    }
+  },
+  "about": {
+    "HEAD": "Edit About Content-Thai",
+    "TITLE": "Title-Thai",
+    "DESCRIPTION": "Description-Thai",
+    "BUTTON": "Change-Thai"
+  },
+  "sitesetting": {
+    "HEAD": "Change Site Setting-Thai",
+    "TITLE": "Blog Title-Thai",
+    "LOGO": "BLog Logo-Thai",
+    "BUTTON": "Change-Thai"
+  },
+  "profile": {
+    "HEAD": "My Profile-Thai",
+    "UPLOAD-IMAGE": "Upload Image-Thai",
+    "CHANGE-PHOTO": "Change Photo-Thai",
+    "NAME": "User Name-Thai",
+    "EMAIL": "Email-Thai",
+    "QUESTION": "Security Question-Thai",
+    "ANSWER": "Answer-Thai",
+    "BUTTON-CHANGE": "Change-Thai",
+    "CHANGE-PASSWORD": "Change Password-Thai",
+    "PASSWORD": "Password-Thai",
+    "NEW-PASSWORD": "New Password-Thai",
+    "CONFIRM-PASSWORD": "Confirm Password-Thai",
+    "SAVE-PASSWORD": "Save Password-Thai"
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation-Thai"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard-Thai",
+      "CATEGORY": "Manage Category-Thai",
+      "category-content": {
+        "ADD": "Add Category-Thai",
+        "VIEW": "View Categories-Thai"
+      },
+      "POST": "Manage Post-Thai",
+      "post-content": {
+        "ADD": "Add Post-Thai",
+        "VIEW": "View Posts-Thai"
+      },
+      "ADMIN": "Manage Admin-Thai",
+      "admin-content": {
+        "ADD": "Add Admin-Thai",
+        "VIEW": "View Admins-Thai"
+      },
+      "USER": "Manage User-Thai",
+      "user-content": {
+        "USER": "View Users-Thai",
+        "POST": "View Posts-Thai"
+      },
+      "ABOUT": "Manage About-Thai",
+      "CONTACT": "Manage Contact-Thai",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation-Thai",
+        "MESSAGE": "Contact Messages-Thai"
+      },
+      "SITE": "Site Setting-Thai",
+      "site-content": {
+        "SETTING": "Change Setting-Thai"
+      },
+      "SETTING": "Admin Setting-Thai",
+      "setting-content": {
+        "PROFILE": "Edit Profile-Thai"
+      }
+    }
+  }
+}

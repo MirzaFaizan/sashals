@@ -1,0 +1,532 @@
+<div class="main_content">
+  <div class="searching_container">
+    <div class="form_edite_wrap profile_write" id="profile_write">
+        <div>
+          <ul class="custom_breadcrumb">
+            <li>
+              <a href="/" class="nav-home">
+                <span>Home</span>
+                <i class="icon icon_separator"></i>
+              </a>
+            </li>
+            <li>
+              <a href="/profile">
+                <span><%= userData.fname%> <%= userData.lname%></span>
+                <i class="icon icon_separator"></i>
+              </a>
+            </li>
+            <li class="active endpoint" id="edit_label">
+              <span>Edit profile</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="row" style="margin-top: 29px;">
+          <%if(!showPassword){%>
+          <div class="searching-lg-3 searching-md-4 searching-sm-12 searching-xs-12" style="padding-right: 0;">
+            <div class="viewform_left">
+              <div class="viewform_left_item viewform_left_item_1 active" data-next="viewform_1">
+                <span>1</span>Main information</div>
+              <div class="viewform_left_item viewform_left_item_2" data-next="viewform_2">
+                <span>2</span>Company data</div>
+              <div class="viewform_left_item viewform_left_item_3" data-next="viewform_3">
+                <span>3</span>Additional information</div>
+            </div>
+          </div>
+          <%}%>
+          <div class="searching-lg-9 searching-md-8 searching-sm-12 searching-xs-12 profileform_main">
+            <%if(showPassword){%>
+            <form id="editPassword" style="margin-left: 3%">
+              <div id="viewform_1" class="vieform_section" >
+                <div class="viewform_title viewform_title_first"  style="margin-top: 0"><span>Change password</span></div>
+                <div class="row">
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_current_label"> Current Password</div>
+                      <div class="form-group field-email required">
+                        <input type="password" id="currentPassword" name="currentPassword">
+                        <div class="help-block"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_new_label"> New password</div>
+                      <div class="form-group field-password">
+                          <input type="password" id="newpassword" name="newpassword" >
+                        <div class="help-block"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_confirm_label"> Confirm password</div>
+                      <div class="form-group field-password">
+                          <input type="password" id="confirmpassword" name="confirmpassword" >
+                        <div class="help-block"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="save_or_next">
+                <input id="save" type="submit" class="profile-save-change" value="Save changes">
+              </div>
+            </form>
+            <%}else{%>
+            <form method="post" action="/profile/edit-profile">
+            <div id="viewform_1" class="vieform_section">
+              <div class="viewform_title viewform_title_first" style="margin-top: 0"><span>Login and password</span></div>
+              <div class="row">
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="input_wrap">
+                    <div class="viewform_email_label"> Email address</div>
+                    <div class="form-group field-email required">
+                      <input type="text" id="email" class="" name="updateEmail" value="<%= userData.email%>" >
+                      <div class="help-block"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="input_wrap">
+                    <div class="viewform_password_label"> Change password</div>
+                    <div class="form-group field-password">
+                        <a class="viewform_next" id="password_change" style="color: #fff; margin: 0px" href="/profile/edit-profile?action=change-password" >Change Now</a>
+                      <div class="help-block"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--<div class="viewform_title"><span>Additional functions</span></div>
+              <div class="user-profile-delete user-profile-delete--indented">
+                <div class="row">
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <button type="button" class="user-profile-delete__button">Delete profile</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="user-profile-delete__warning">
+                      <span class="user-profile-delete__warning-title">Are you sure you want to delete your profile?</span>
+                      <button type="button" class="user-profile-delete__accept" data-model_class="frontend\models\User" data-model_id="13707">
+                        Yes</button>
+                      <button type="button" class="user-profile-delete__cancel">
+                        No</button>
+                    </div>
+                  </div>
+                </div>
+              </div>-->
+              <div class="viewform_title"><span id="personal_label">Personal data</span></div>
+              <div class="row">
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="input_wrap">
+                    <div class="viewform_fname_label"> First name</div>
+                    <div class="form-group field-first_name required">
+                      <input type="text" id="first_name" class="" name="updateFirst" value="<%= userData.fname%>" aria-required="true">
+                      <div class="help-block"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="input_wrap">
+                    <div class="viewform_lname_label"> Last name</div>
+                    <div class="form-group field-last_name required">
+                      <input type="text" id="last_name" class="" name="updateLast" value="<%= userData.lname%>" aria-required="true">
+                      <div class="help-block"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="viewform_title"><span id="location_label">Location</span></div>
+              <div class="row">
+                <div class="ccwidget_country searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 reglogin_information_block_in">
+                  <label for="ccwidget_country_5ba222a6c27a4" class="reglogin_input_label" id="country_label">Country</label>
+                  <div class="input_wrap">
+                    <div class="form-group field-registrationform-first_name required">
+                      <input type="text" id="updateCountry" name="updateCountry" value="<%= userData.country%>" aria-required="true">
+                      <p class="help-block help-block-error"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="ccwidget_city searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 reglogin_information_block_in">
+                  <label for="ccwidget_city_5ba222a6c27a4" class="reglogin_input_label" id="city_label">City</label>
+                  <div class="input_wrap">
+                    <div class="form-group field-registrationform-first_name required">
+                      <input type="text" id="updateCity" class="pass reglogin_password" name="updateCity" value="<%= userData.city%>" aria-required="true">
+                      <p class="help-block help-block-error"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="viewform_title"><img src="img/profileform/phone.svg" alt=""><span id="contact_label">Contacts</span></div>
+              <div class="viewform_title_label" id="phone_label"> Phone numbers</div>
+              <div class="row contacts_row">
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 user-profile-edit-phone user-profile-edit-phone--indented">
+                  <input type="text" id="user-phone" class="user-profile-edit-phone__input" name="updatePhone" value="<%= userData.phone%>" data-mask="+7 999 999-99-99" data-plugin-inputmask="inputmask_38bd0c1c">
+                  <div type="button" class="remove_phone"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 profileform_mt_social">
+                  <div class="viewform_title_label" id="skype_label"> Skype</div>
+                  <div class="input_wrap social">
+                    <img src="/img/profileform/skype-logo.svg" alt="" class="profileform_social_skype">
+                    <input type="text" name="updateSkype" value="<%= userData.skype%>">
+                  </div>
+                </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 profileform_mt_social">
+                  <div class="viewform_title_label" id="wechat_label"> WeChat</div>
+                  <div class="input_wrap social">
+                    <img src="/img/profileform/wechat.svg" alt="" class="profileform_social_wechat">
+                    <input type="text" name="updateWechat" value="<%= userData.wechat%>">
+                  </div>
+                </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 profileform_mt_social">
+                  <div class="viewform_title_label" id="vkontakte_label"> Vkontakte</div>
+                  <img src="/img/profileform/vk.svg" alt="" class="profileform_social_vk">
+                  <input type="text" name="updateVkontakte" value="<%= userData.vkontakte%>">
+                </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 profileform_mt_social">
+                  <div class="viewform_title_label" id="facebook_label"> Facebook</div>
+                  <img src="/img/profileform/facebook-hover.svg" alt="" class="profileform_social_facebook">
+                  <input type="text" name="updateFacebook" value="<%= userData.facebook%>">
+                 </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 profileform_mt_social">
+                  <div class="viewform_title_label" id="google_label"> Google+</div>
+                  <img src="/img/profileform/google-plus.svg" alt="" class="profileform_social_google">
+                  <input type="text" name="updateGoogle" value="<%= userData.google%>">
+                </div>
+              </div>
+            </div>
+            <div id="viewform_2" class="vieform_section" >
+              <div class="viewform_title"><img src="img/profileform/company.svg" alt=""><span id="company_data_label">Company data</span></div>
+              <div class="row">
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="input_wrap">
+                    <div class="viewform_title_label" id="company_inc_label"> Country of incorporation</div>
+                    <div class="form-group field-organization-country_id">
+                      <label class="control-label" for="organization-country_id"></label>
+                      <div class="kv-plugin-loading loading-organization-country_id">&nbsp;</div>
+                      <div class="input-group s2-input-group input-group-md kv-input-group-hide group-organization-country_id select2-bootstrap-prepend"><span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                        <select id="organization-country_id"  class="select2_widget company_country_select form-control" name="updateOrgCountry">
+                          <option value="Afghanistan" <%= (userData.country == 'Afghanistan')?'selected':''%>>Afghanistan</option>
+                          <option value="Albania" <%= (userData.country == 'Albania')?'selected':''%>>Albania</option>
+                          <option value="Algeria" <%= (userData.country == 'Algeria')?'selected':''%>>Algeria</option>
+                          <option value="American Samoa" <%= (userData.country == 'American Samoa')?'selected':''%>>American Samoa</option>
+                          <option value="Andorra" <%= (userData.country == 'Andorra')?'selected':''%>>Andorra</option>
+                          <option value="Angola" <%= (userData.country == 'Angola')?'selected':''%>>Angola</option>
+                          <option value="Anguilla" <%= (userData.country == 'Anguilla')?'selected':''%>>Anguilla</option>
+                          <option value="Antigua and Barbuda" <%= (userData.country == 'Antigua and Barbuda')?'selected':''%>>Antigua and Barbuda</option>
+                          <option value="Argentina" <%= (userData.country == 'Argentina')?'selected':''%>>Argentina</option>
+                          <option value="Armenia" <%= (userData.country == 'Armenia')?'selected':''%>>Armenia</option>
+                          <option value="Aruba" <%= (userData.country == 'Aruba')?'selected':''%>>Aruba</option>
+                          <option value="Australia" <%= (userData.country == 'Australia')?'selected':''%>>Australia</option>
+                          <option value="Austria" <%= (userData.country == 'Austria')?'selected':''%>>Austria</option>
+                          <option value="Azerbaijan" <%= (userData.country == 'Azerbaijan')?'selected':''%>>Azerbaijan</option>
+                          <option value="Bahamas" <%= (userData.country == 'Bahamas')?'selected':''%>>Bahamas</option>
+                          <option value="Bahrain" <%= (userData.country == 'Bahrain')?'selected':''%>>Bahrain</option>
+                          <option value="Bangladesh" <%= (userData.country == 'Bangladesh')?'selected':''%>>Bangladesh</option>
+                          <option value="Barbados" <%= (userData.country == 'Barbados')?'selected':''%>>Barbados</option>
+                          <option value="Belarus" <%= (userData.country == 'Belarus')?'selected':''%>>Belarus</option>
+                          <option value="Belgium" <%= (userData.country == 'Belgium')?'selected':''%>>Belgium</option>
+                          <option value="Belize" <%= (userData.country == 'Belize')?'selected':''%>>Belize</option>
+                          <option value="Benin" <%= (userData.country == 'Benin')?'selected':''%>>Benin</option>
+                          <option value="Bermuda" <%= (userData.country == 'Bermuda')?'selected':''%>>Bermuda</option>
+                          <option value="Bhutan" <%= (userData.country == 'Bhutan')?'selected':''%>>Bhutan</option>
+                          <option value="Bolivia" <%= (userData.country == 'Bolivia')?'selected':''%>>Bolivia</option>
+                          <option value="Bonaire, Sint Eustatius and Saba" <%= (userData.country == 'Bonaire, Sint Eustatius and Saba')?'selected':''%>>Bonaire, Sint Eustatius and Saba</option>
+                          <option value="Bosnia and Herzegovina" <%= (userData.country == 'Bosnia and Herzegovina')?'selected':''%>>Bosnia and Herzegovina</option>
+                          <option value="Botswana" <%= (userData.country == 'Botswana')?'selected':''%>>Botswana</option>
+                          <option value="Brazil" <%= (userData.country == 'Brazil')?'selected':''%>>Brazil</option>
+                          <option value="British Virgin Islands" <%= (userData.country == 'British Virgin Islands')?'selected':''%>>British Virgin Islands</option>
+                          <option value="Brunei Darussalam" <%= (userData.country == 'Brunei Darussalam')?'selected':''%>>Brunei Darussalam</option>
+                          <option value="Bulgaria" <%= (userData.country == 'Bulgaria')?'selected':''%>>Bulgaria</option>
+                          <option value="Burkina Faso" <%= (userData.country == 'Burkina Faso')?'selected':''%>>Burkina Faso</option>
+                          <option value="Burundi" <%= (userData.country == 'Burundi')?'selected':''%>>Burundi</option>
+                          <option value="Cambodia" <%= (userData.country == 'Cambodia')?'selected':''%>>Cambodia</option>
+                          <option value="Cameroon" <%= (userData.country == 'Cameroon')?'selected':''%>>Cameroon</option>
+                          <option value="Canada" <%= (userData.country == 'Canada')?'selected':''%>>Canada</option>
+                          <option value="Cape Verde" <%= (userData.country == 'Cape Verde')?'selected':''%>>Cape Verde</option>
+                          <option value="Cayman Islands" <%= (userData.country == 'Cayman Islands')?'selected':''%>>Cayman Islands</option>
+                          <option value="Central African Republic" <%= (userData.country == 'Central African Republic')?'selected':''%>>Central African Republic</option>
+                          <option value="Chad" <%= (userData.country == 'Chad')?'selected':''%>>Chad</option>
+                          <option value="Chile" <%= (userData.country == 'Chile')?'selected':''%>>Chile</option>
+                          <option value="China" <%= (userData.country == 'China')?'selected':''%>>China</option>
+                          <option value="Colombia" <%= (userData.country == 'Colombia')?'selected':''%>>Colombia</option>
+                          <option value="Comoros" <%= (userData.country == 'Comoros')?'selected':''%>>Comoros</option>
+                          <option value="Congo" <%= (userData.country == 'Congo')?'selected':''%>>Congo</option>
+                          <option value="Congo, Democratic Republic" <%= (userData.country == 'Congo, Democratic Republic')?'selected':''%>>Congo, Democratic Republic</option>
+                          <option value="Cook Islands" <%= (userData.country == 'Cook Islands')?'selected':''%>>Cook Islands</option>
+                          <option value="Costa Rica" <%= (userData.country == 'Costa Rica')?'selected':''%>>Costa Rica</option>
+                          <option value="Côte d`Ivoire" <%= (userData.country == 'Côte d`Ivoire')?'selected':''%>>Côte d`Ivoire</option>
+                          <option value="Croatia" <%= (userData.country == 'Croatia')?'selected':''%>>Croatia</option>
+                          <option value="Cuba" <%= (userData.country == 'Cuba')?'selected':''%>>Cuba</option>
+                          <option value="Curaçao" <%= (userData.country == 'Curaçao')?'selected':''%>>Curaçao</option>
+                          <option value="Cyprus" <%= (userData.country == 'Cyprus')?'selected':''%>>Cyprus</option>
+                          <option value="Czechia" <%= (userData.country == 'Czechia')?'selected':''%>>Czechia</option>
+                          <option value="Denmark" <%= (userData.country == 'Denmark')?'selected':''%>>Denmark</option>
+                          <option value="Djibouti" <%= (userData.country == 'Djibouti')?'selected':''%>>Djibouti</option>
+                          <option value="Dominica" <%= (userData.country == 'Dominica')?'selected':''%>>Dominica</option>
+                          <option value="Dominican Republic" <%= (userData.country == 'Dominican Republic')?'selected':''%>>Dominican Republic</option>
+                          <option value="East Timor" <%= (userData.country == 'East Timor')?'selected':''%>>East Timor</option>
+                          <option value="Ecuador" <%= (userData.country == 'Ecuador')?'selected':''%>>Ecuador</option>
+                          <option value="Egypt" <%= (userData.country == 'Egypt')?'selected':''%>>Egypt</option>
+                          <option value="El Salvador" <%= (userData.country == 'El Salvador')?'selected':''%>>El Salvador</option>
+                          <option value="Equatorial Guinea" <%= (userData.country == 'Equatorial Guinea')?'selected':''%>>Equatorial Guinea</option>
+                          <option value="Eritrea" <%= (userData.country == 'Eritrea')?'selected':''%>>Eritrea</option>
+                          <option value="Estonia" <%= (userData.country == 'Estonia')?'selected':''%>>Estonia</option>
+                          <option value="Ethiopia" <%= (userData.country == 'Ethiopia')?'selected':''%>>Ethiopia</option>
+                          <option value="Falkland Islands" <%= (userData.country == 'Falkland Islands')?'selected':''%>>Falkland Islands</option>
+                          <option value="Faroe Islands" <%= (userData.country == 'Faroe Islands')?'selected':''%>>Faroe Islands</option>
+                          <option value="Fiji" <%= (userData.country == 'Fiji')?'selected':''%>>Fiji</option>
+                          <option value="Finland" <%= (userData.country == 'Finland')?'selected':''%>>Finland</option>
+                          <option value="France" <%= (userData.country == 'France')?'selected':''%>>France</option>
+                          <option value="French Guiana" <%= (userData.country == 'French Guiana')?'selected':''%>>French Guiana</option>
+                          <option value="French Polynesia" <%= (userData.country == 'French Polynesia')?'selected':''%>>French Polynesia</option>
+                          <option value="Gabon" <%= (userData.country == 'Gabon')?'selected':''%>>Gabon</option>
+                          <option value="Gambia" <%= (userData.country == 'Gambia')?'selected':''%>>Gambia</option>
+                          <option value="Georgia" <%= (userData.country == 'Georgia')?'selected':''%>>Georgia</option>
+                          <option value="Germany" <%= (userData.country == 'Germany')?'selected':''%>>Germany</option>
+                          <option value="Ghana" <%= (userData.country == 'Ghana')?'selected':''%>>Ghana</option>
+                          <option value="Gibraltar" <%= (userData.country == 'Gibraltar')?'selected':''%>>Gibraltar</option>
+                          <option value="Greece" <%= (userData.country == 'Greece')?'selected':''%>>Greece</option>
+                          <option value="Greenland" <%= (userData.country == 'Greenland')?'selected':''%>>Greenland</option>
+                          <option value="Grenada" <%= (userData.country == 'Grenada')?'selected':''%>>Grenada</option>
+                          <option value="Guadeloupe" <%= (userData.country == 'Guadeloupe')?'selected':''%>>Guadeloupe</option>
+                          <option value="Guam" <%= (userData.country == 'Guam')?'selected':''%>>Guam</option>
+                          <option value="Guatemala" <%= (userData.country == 'Guatemala')?'selected':''%>>Guatemala</option>
+                          <option value="Guinea" <%= (userData.country == 'Guinea')?'selected':''%>>Guinea</option>
+                          <option value="Guinea-Bissau" <%= (userData.country == 'Guinea-Bissau')?'selected':''%>>Guinea-Bissau</option>
+                          <option value="Guyana" <%= (userData.country == 'Guyana')?'selected':''%>>Guyana</option>
+                          <option value="Haiti" <%= (userData.country == 'Haiti')?'selected':''%>>Haiti</option>
+                          <option value="Honduras" <%= (userData.country == 'Honduras')?'selected':''%>>Honduras</option>
+                          <option value="Hong Kong" <%= (userData.country == 'Hong Kong')?'selected':''%>>Hong Kong</option>
+                          <option value="Hungary" <%= (userData.country == 'Hungary')?'selected':''%>>Hungary</option>
+                          <option value="Iceland" <%= (userData.country == 'Iceland')?'selected':''%>>Iceland</option>
+                          <option value="India" <%= (userData.country == 'India')?'selected':''%>>India</option>
+                          <option value="Indonesia" <%= (userData.country == 'Indonesia')?'selected':''%>>Indonesia</option>
+                          <option value="Iran" <%= (userData.country == 'Iran')?'selected':''%>>Iran</option>
+                          <option value="Iraq" <%= (userData.country == 'Iraq')?'selected':''%>>Iraq</option>
+                          <option value="Ireland" <%= (userData.country == 'Ireland')?'selected':''%>>Ireland</option>
+                          <option value="Isle of Man" <%= (userData.country == 'Isle of Man')?'selected':''%>>Isle of Man</option>
+                          <option value="Israel" <%= (userData.country == 'Israel')?'selected':''%>>Israel</option>
+                          <option value="Italy" <%= (userData.country == 'Italy')?'selected':''%>>Italy</option>
+                          <option value="Jamaica" <%= (userData.country == 'Jamaica')?'selected':''%>>Jamaica</option>
+                          <option value="Japan" <%= (userData.country == 'Japan')?'selected':''%>>Japan</option>
+                          <option value="Jordan" <%= (userData.country == 'Jordan')?'selected':''%>>Jordan</option>
+                          <option value="Kazakhstan" <%= (userData.country == 'Kazakhstan')?'selected':''%>>Kazakhstan</option>
+                          <option value="Kenya" <%= (userData.country == 'Kenya')?'selected':''%>>Kenya</option>
+                          <option value="Kiribati" <%= (userData.country == 'Kiribati')?'selected':''%>>Kiribati</option>
+                          <option value="Kuwait" <%= (userData.country == 'Kuwait')?'selected':''%>>Kuwait</option>
+                          <option value="Kyrgyzstan" <%= (userData.country == 'Kyrgyzstan')?'selected':''%>>Kyrgyzstan</option>
+                          <option value="Laos" <%= (userData.country == 'Laos')?'selected':''%>>Laos</option>
+                          <option value="Latvia" <%= (userData.country == 'Latvia')?'selected':''%>>Latvia</option>
+                          <option value="Lebanon" <%= (userData.country == 'Lebanon')?'selected':''%>>Lebanon</option>
+                          <option value="Lesotho" <%= (userData.country == 'Lesotho')?'selected':''%>>Lesotho</option>
+                          <option value="Liberia" <%= (userData.country == 'Liberia')?'selected':''%>>Liberia</option>
+                          <option value="Libya" <%= (userData.country == 'Libya')?'selected':''%>>Libya</option>
+                          <option value="Liechtenstein" <%= (userData.country == 'Liechtenstein')?'selected':''%>>Liechtenstein</option>
+                          <option value="Lithuania" <%= (userData.country == 'Lithuania')?'selected':''%>>Lithuania</option>
+                          <option value="Luxembourg" <%= (userData.country == 'Luxembourg')?'selected':''%>>Luxembourg</option>
+                          <option value="Macau" <%= (userData.country == 'Macau')?'selected':''%>>Macau</option>
+                          <option value="Macedonia" <%= (userData.country == 'Macedonia')?'selected':''%>>Macedonia</option>
+                          <option value="Madagascar" <%= (userData.country == 'Madagascar')?'selected':''%>>Madagascar</option>
+                          <option value="Malawi" <%= (userData.country == 'Malawi')?'selected':''%>>Malawi</option>
+                          <option value="Malaysia" <%= (userData.country == 'Malaysia')?'selected':''%>>Malaysia</option>
+                          <option value="Maldives" <%= (userData.country == 'Maldives')?'selected':''%>>Maldives</option>
+                          <option value="Mali" <%= (userData.country == 'Mali')?'selected':''%>>Mali</option>
+                          <option value="Malta" <%= (userData.country == 'Malta')?'selected':''%>>Malta</option>
+                          <option value="Marshall Islands" <%= (userData.country == 'Marshall Islands')?'selected':''%>>Marshall Islands</option>
+                          <option value="Martinique" <%= (userData.country == 'Martinique')?'selected':''%>>Martinique</option>
+                          <option value="Mauritania" <%= (userData.country == 'Mauritania')?'selected':''%>>Mauritania</option>
+                          <option value="Mauritius" <%= (userData.country == 'Mauritius')?'selected':''%>>Mauritius</option>
+                          <option value="Mexico" <%= (userData.country == 'Mexico')?'selected':''%>>Mexico</option>
+                          <option value="Micronesia" <%= (userData.country == 'Micronesia')?'selected':''%>>Micronesia</option>
+                          <option value="Moldova" <%= (userData.country == 'Moldova')?'selected':''%>>Moldova</option>
+                          <option value="Monaco" <%= (userData.country == 'Monaco')?'selected':''%>>Monaco</option>
+                          <option value="Mongolia" <%= (userData.country == 'Mongolia')?'selected':''%>>Mongolia</option>
+                          <option value="Montenegro" <%= (userData.country == 'Montenegro')?'selected':''%>>Montenegro</option>
+                          <option value="Montserrat" <%= (userData.country == 'Montserrat')?'selected':''%>>Montserrat</option>
+                          <option value="Morocco" <%= (userData.country == 'Morocco')?'selected':''%>>Morocco</option>
+                          <option value="Mozambique" <%= (userData.country == 'Mozambique')?'selected':''%>>Mozambique</option>
+                          <option value="Myanmar" <%= (userData.country == 'Myanmar')?'selected':''%>>Myanmar</option>
+                          <option value="Namibia" <%= (userData.country == 'Namibia')?'selected':''%>>Namibia</option>
+                          <option value="Nauru" <%= (userData.country == 'Nauru')?'selected':''%>>Nauru</option>
+                          <option value="Nepal" <%= (userData.country == 'Nepal')?'selected':''%>>Nepal</option>
+                          <option value="Netherlands" <%= (userData.country == 'Netherlands')?'selected':''%>>Netherlands</option>
+                          <option value="New Caledonia" <%= (userData.country == 'New Caledonia')?'selected':''%>>New Caledonia</option>
+                          <option value="New Zealand" <%= (userData.country == 'New Zealand')?'selected':''%>>New Zealand</option>
+                          <option value="Nicaragua" <%= (userData.country == 'Nicaragua')?'selected':''%>>Nicaragua</option>
+                          <option value="Niger" <%= (userData.country == 'Niger')?'selected':''%>>Niger</option>
+                          <option value="Nigeria" <%= (userData.country == 'Nigeria')?'selected':''%>>Nigeria</option>
+                          <option value="Niue" <%= (userData.country == 'Niue')?'selected':''%>>Niue</option>
+                          <option value="Norfolk Island" <%= (userData.country == 'Norfolk Island')?'selected':''%>>Norfolk Island</option>
+                          <option value="North Korea" <%= (userData.country == 'North Korea')?'selected':''%>>North Korea</option>
+                          <option value="Northern Mariana Islands" <%= (userData.country == 'Northern Mariana Islands')?'selected':''%>>Northern Mariana Islands</option>
+                          <option value="Norway" <%= (userData.country == 'Norway')?'selected':''%>>Norway</option>
+                          <option value="Oman" <%= (userData.country == 'Oman')?'selected':''%>>Oman</option>
+                          <option value="Pakistan" <%= (userData.country == 'Pakistan')?'selected':''%>>Pakistan</option>
+                          <option value="Palau" <%= (userData.country == 'Palau')?'selected':''%>>Palau</option>
+                          <option value="Palestine" <%= (userData.country == 'Palestine')?'selected':''%>>Palestine</option>
+                          <option value="Panama" <%= (userData.country == 'Panama')?'selected':''%>>Panama</option>
+                          <option value="Papua New Guinea" <%= (userData.country == 'Papua New Guinea')?'selected':''%>>Papua New Guinea</option>
+                          <option value="Paraguay" <%= (userData.country == 'Paraguay')?'selected':''%>>Paraguay</option>
+                          <option value="Peru" <%= (userData.country == 'Peru')?'selected':''%>>Peru</option>
+                          <option value="Philippines" <%= (userData.country == 'Philippines')?'selected':''%>>Philippines</option>
+                          <option value="Pitcairn Islands" <%= (userData.country == 'Pitcairn Islands')?'selected':''%>>Pitcairn Islands</option>
+                          <option value="Poland" <%= (userData.country == 'Poland')?'selected':''%>>Poland</option>
+                          <option value="Portugal" <%= (userData.country == 'Portugal')?'selected':''%>>Portugal</option>
+                          <option value="Puerto Rico" <%= (userData.country == 'Puerto Rico')?'selected':''%>>Puerto Rico</option>
+                          <option value="Qatar" <%= (userData.country == 'Qatar')?'selected':''%>>Qatar</option>
+                          <option value="Reunion" <%= (userData.country == 'Reunion')?'selected':''%>>Reunion</option>
+                          <option value="Romania" <%= (userData.country == 'Romania')?'selected':''%>>Romania</option>
+                          <option value="Russia" <%= (userData.country == 'Russia')?'selected':''%>>Russia</option>
+                          <option value="Rwanda" <%= (userData.country == 'Rwanda')?'selected':''%>>Rwanda</option>
+                          <option value="Saint Helena" <%= (userData.country == 'Saint Helena')?'selected':''%>>Saint Helena</option>
+                          <option value="Saint Kitts and Nevis" <%= (userData.country == 'Saint Kitts and Nevis')?'selected':''%>>Saint Kitts and Nevis</option>
+                          <option value="Saint Lucia" <%= (userData.country == 'Saint Lucia')?'selected':''%>>Saint Lucia</option>
+                          <option value="Saint Pierre and Miquelon" <%= (userData.country == 'Saint Pierre and Miquelon')?'selected':''%>>Saint Pierre and Miquelon</option>
+                          <option value="Saint Vincent and the Grenadines" <%= (userData.country == 'Saint Vincent and the Grenadines')?'selected':''%>>Saint Vincent and the Grenadines</option>
+                          <option value="Samoa" <%= (userData.country == 'Samoa')?'selected':''%>>Samoa</option>
+                          <option value="San Marino" <%= (userData.country == 'San Marino')?'selected':''%>>San Marino</option>
+                          <option value="Sao Tome and Principe" <%= (userData.country == 'Sao Tome and Principe')?'selected':''%>>Sao Tome and Principe</option>
+                          <option value="Saudi Arabia" <%= (userData.country == 'Saudi Arabia')?'selected':''%>>Saudi Arabia</option>
+                          <option value="Senegal" <%= (userData.country == 'Senegal')?'selected':''%>>Senegal</option>
+                          <option value="Serbia" <%= (userData.country == 'Serbia')?'selected':''%>>Serbia</option>
+                          <option value="Seychelles" <%= (userData.country == 'Seychelles')?'selected':''%>>Seychelles</option>
+                          <option value="Sierra Leone" <%= (userData.country == 'Sierra Leone')?'selected':''%>>Sierra Leone</option>
+                          <option value="Singapore" <%= (userData.country == 'Singapore')?'selected':''%>>Singapore</option>
+                          <option value="Sint Maarten" <%= (userData.country == 'Sint Maarten')?'selected':''%>>Sint Maarten</option>
+                          <option value="Slovakia" <%= (userData.country == 'Slovakia')?'selected':''%>>Slovakia</option>
+                          <option value="Slovenia" <%= (userData.country == 'Slovenia')?'selected':''%>>Slovenia</option>
+                          <option value="Solomon Islands" <%= (userData.country == 'Solomon Islands')?'selected':''%>>Solomon Islands</option>
+                          <option value="Somalia" <%= (userData.country == 'Somalia')?'selected':''%>>Somalia</option>
+                          <option value="South Africa" <%= (userData.country == 'South Africa')?'selected':''%>>South Africa</option>
+                          <option value="South Korea" <%= (userData.country == 'South Korea')?'selected':''%>>South Korea</option>
+                          <option value="South Sudan" <%= (userData.country == 'South Sudan')?'selected':''%>>South Sudan</option>
+                          <option value="Spain" <%= (userData.country == 'Spain')?'selected':''%>>Spain</option>
+                          <option value="Sir Lanka" <%= (userData.country == 'Sri Lanka')?'selected':''%>>Sri Lanka</option>
+                          <option value="Sudan" <%= (userData.country == 'Sudan')?'selected':''%>>Sudan</option>
+                          <option value="Suriname" <%= (userData.country == 'Suriname')?'selected':''%>>Suriname</option>
+                          <option value="Svalbard and Jan Mayen" <%= (userData.country == 'Svalbard and Jan Mayen')?'selected':''%>>Svalbard and Jan Mayen</option>
+                          <option value="Swaziland" <%= (userData.country == 'Swaziland')?'selected':''%>>Swaziland</option>
+                          <option value="Sweden" <%= (userData.country == 'Sweden')?'selected':''%>>Sweden</option>
+                          <option value="Switzerland" <%= (userData.country == 'Switzerland')?'selected':''%>>Switzerland</option>
+                          <option value="Syria" <%= (userData.country == 'Syria')?'selected':''%>>Syria</option>
+                          <option value="Taiwan" <%= (userData.country == 'Taiwan')?'selected':''%>>Taiwan</option>
+                          <option value="Tajikistan" <%= (userData.country == 'Tajikistan')?'selected':''%>>Tajikistan</option>
+                          <option value="Tanzania" <%= (userData.country == 'Tanzania')?'selected':''%>>Tanzania</option>
+                          <option value="Thailand" <%= (userData.country == 'Thailand')?'selected':''%>>Thailand</option>
+                          <option value="Togo" <%= (userData.country == 'Togo')?'selected':''%>>Togo</option>
+                          <option value="Tokelau" <%= (userData.country == 'Tokelau')?'selected':''%>>Tokelau</option>
+                          <option value="Tonga" <%= (userData.country == 'Tonga')?'selected':''%>>Tonga</option>
+                          <option value="Trinidad and Tobago" <%= (userData.country == 'Trinidad and Tobago')?'selected':''%>>Trinidad and Tobago</option>
+                          <option value="Tunisia" <%= (userData.country == 'Tunisia')?'selected':''%>>Tunisia</option>
+                          <option value="Turkey" <%= (userData.country == 'Turkey')?'selected':''%>>Turkey</option>
+                          <option value="Turkmenistan" <%= (userData.country == 'Turkmenistan')?'selected':''%>>Turkmenistan</option>
+                          <option value="Turks and Caicos Islands" <%= (userData.country == 'Turks and Caicos Islands')?'selected':''%>>Turks and Caicos Islands</option>
+                          <option value="Tuvalu" <%= (userData.country == 'Tuvalu')?'selected':''%>>Tuvalu</option>
+                          <option value="Uganda" <%= (userData.country == 'Uganda')?'selected':''%>>Uganda</option>
+                          <option value="Ukraine" <%= (userData.country == 'Ukraine')?'selected':''%>>Ukraine</option>
+                          <option value="United Arab Emirates" <%= (userData.country == 'United Arab Emirates')?'selected':''%>>United Arab Emirates</option>
+                          <option value="United Kingdom" <%= (userData.country == 'United Kingdom')?'selected':''%>>United Kingdom</option>
+                          <option value="United States" <%= (userData.country == 'United States')?'selected':''%>>United States</option>
+                          <option value="Uruguay" <%= (userData.country == 'Uruguay')?'selected':''%>>Uruguay</option>
+                          <option value="US Virgin Islands" <%= (userData.country == 'US Virgin Islands')?'selected':''%>>US Virgin Islands</option>
+                          <option value="Uzbekistan" <%= (userData.country == 'Uzbekistan')?'selected':''%>>Uzbekistan</option>
+                          <option value="Vanuatu" <%= (userData.country == 'Vanuatu')?'selected':''%>>Vanuatu</option>
+                          <option value="Vatican" <%= (userData.country == 'Vatican')?'selected':''%>>Vatican</option>
+                          <option value="Venezuela" <%= (userData.country == 'Venezuela')?'selected':''%>>Venezuela</option>
+                          <option value="Vietnam" <%= (userData.country == 'Vietnam')?'selected':''%>>Vietnam</option>
+                          <option value="Wallis and Futuna" <%= (userData.country == 'Wallis and Futuna')?'selected':''%>>Wallis and Futuna</option>
+                          <option value="Western Sahara" <%= (userData.country == 'Western Sahara')?'selected':''%>>Western Sahara</option>
+                          <option value="Yemen" <%= (userData.country == 'Yemen')?'selected':''%>>Yemen</option>
+                          <option value="Zambia" <%= (userData.country == 'Zambia')?'selected':''%>>Zambia</option>
+                          <option value="Zimbabwe" <%= (userData.country == 'Zimbabwe')?'selected':''%>>Zimbabwe</option>
+                        </select>
+                      </div>
+                      <div class="help-block"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                </div>
+              </div>
+              <div class="">
+                <div class="row">
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_title_label" id="company_id_label"> Uniqie company identificator</div>
+                      <div class="form-group field-organization-cuid">
+                        <input type="text" id="organization-cuid" class="" name="updateOrgId" value="<%= userData.companyId%>" >
+                        <div class="help-block"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_title_label" id="company_name_label"> Company name</div>
+                      <div class="form-group field-organization-name">
+                        <input type="text" id="organization-name" class="" name="updateOrgName" value="<%= userData.companyName%>">
+                        <div class="help-block"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_title_label" id="company_phone_label"> Company phone number</div>
+                      <input type="text" id="organization-phones" class="user-profile-edit-phone__input" name="updateOrgPhone" value="<%= userData.companyPhone%>">
+                    </div>
+                  </div>
+                  <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                    <div class="input_wrap">
+                      <div class="viewform_title_label" id="company_address_label"> Company address</div>
+                      <div class="form-group field-organizationlanguagetranslate-address">
+                        <input type="text" id="organizationlanguagetranslate-address" class="" name="updateOrgAddress" value="<%= userData.companyAddress%>">
+                        <div class="help-block"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="viewform_3" class="vieform_section">
+              <div class="viewform_title"><span id="info_label">Information about you</span></div>
+              <div class="viewform_title_label" id="info_sub_label"> Write a few words about yourself</div>
+              <div class="input_wrap profileform_about">
+                <div class="form-group field-about_my">
+                  <textarea id="about_my" class="" name="updateDescription" placeholder="Tell us about yourself"><%= userData.description%></textarea>
+                  <div class="help-block"></div>
+                </div>
+                <div class="profileform_desc_counter">0</div>
+              </div>
+              <div class="row">
+                <div class="searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="input_wrap">
+                    <div class="viewform_title_label" id="language_label"> What language do you speak?</div>
+                    <div class="form-group field-user-languages">
+                      <div class="input_wrap language">
+                        <input type="text" placeholder="separated with comma" name="updateLanguage" value="<%= userData.language%>">
+                    </div>
+                  </div>
+                </div>
+                <div class="input_wrap">
+                  <div class="viewform_title_label" id="skill_label"> Your skills</div>
+                  <div class="form-group field-user-skills">
+                    <div class="skill_wrap">
+                      <input type="text" placeholder="separated with comma" name="updateSkill" value="<%= userData.skills%>">
+                    </div>
+                    <div class="help-block"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="save_or_next">
+              <input id="save" type="submit" class="profile-save-change" value="Save changes">
+            </div>
+          </div>
+        </form>
+        <%}%>
+        </div>
+    </div>
+  </div>

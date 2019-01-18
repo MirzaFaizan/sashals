@@ -1,0 +1,24 @@
+<aside class="aside_menu">
+  <button class="aside_close_button cancel_btn"></button>
+  <img src="img/logo/logo_square_eng.svg" class="aside_menu_logo" alt="">
+  <div class="sign_into">
+    <div class="sign_into_table">
+      <a class="sign_into_cell sign_into_create" href="/register">Register</a>
+      <a class="sign_into_cell sign_into_login" href="/login">Login</a>
+    </div>
+  </div>
+  <div class="categories_container">
+    <div class="section_item section_item_category">
+      <div class="category_wrap">
+        <%categories.forEach(function(data) {%>
+          <a href="/categories/<%= data.name%>">
+            <div class="item_title">
+              <span><%= data.name%></span>
+              <i class="icon icon_cat_arr_down"></i>
+            </div>
+          </a>
+        <%})%>
+      </div>
+    </div>
+  </div>
+</aside>

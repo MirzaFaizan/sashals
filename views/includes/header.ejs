@@ -1,0 +1,103 @@
+
+<header>
+  <div class="searching_container header_all">
+    <button class="menu_filter_link"></button>
+    <div class="header_line">
+      <%if(sites[0]){%>
+        <a class="header_logo" href="/">
+        <img src="/uploads/logos/<%= sites[0].image%>" style="padding: 2px; width: auto;height: inherit;" />
+      </a>
+        <%}%>
+    </div>
+    <%if(show != 'home'){%>
+      <div class="head_search_wrap">
+        <form onsubmit="event.preventDefault(); searchNow(this)" id="query-form" class="head_search search-row__form">
+          <script>
+            var php_in_service = "offers";
+            var php_in_request = "requests";
+          </script>
+          <div class="input_wrap search-row__input" style="position: relative;">
+            <input type="text" id="query-input" name="q" value="" placeholder="What are you searching for?">
+            <button type="button" class="search-row__selector-button">
+              <span class="search-row__selector-button-text">
+                  offers1
+            </span>
+            </button>
+            <div class="search-row__dropdown">
+              <button type="button" class="search-row__dropdown-button" data-option="services" id="searchOffer">
+                offers1 </button>
+              <button type="button" class="search-row__dropdown-button" data-option="requests" id="searchRequest">
+                requests1 </button>
+            </div>
+            <button type="submit" class="filters_search_link">
+              <i class="icon icon_search_gray"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <%}%>
+        <%if(!userId){%>
+          <div class="signin_wrapper">
+            <div class="login_account">
+              <a href="/login">Login</a> </div>
+            <div class="create_account">
+              <a href="/register">Register</a> </div>
+          </div>
+          <%}%>
+            <%if(userId){%>
+              <div class="entered_account">
+                <div class="account_menu" id="account_menu">
+                  <%if(userImage){%>
+                    <div class="account_img_wrap" id="account_img_wrap" style="background-image:url(/uploads/users/<%= userImage%>)">
+                    </div>
+                    <%}else{%>
+                      <div class="account_img_wrap" id="account_img_wrap">
+                        <i class="icon icon_user" id="icon_user"></i>
+                      </div>
+                      <%}%>
+                        <button href="#" id="account_menu_button" style="border: 0; background: transparent; padding: 0">
+                          <i class="icon icon_arrow_down" id="icon_arrow_dow"></i>
+                        </button>
+                        <ul class="submenu" style="display: none;">
+                          <a href="/profile" id="nav-profile">
+                            <li>My profile</li>
+                          </a>
+                          <a href="/login?action=logout" id="nav-logout">
+                            <li>Log out</li>
+                          </a>
+                        </ul>
+                </div>
+              </div>
+              <%}%>
+
+                <div class="lang_select header_lang" id="header_lang">
+                  <div id="currentLanguage">
+                    <div class="language_flag">
+                      <img src="/img/icons/usa.svg" alt="" id="language_flag">
+                    </div>
+                    <div class="language_name" id="language_name">EN</div>
+                </div>
+                  <div class="language-menu" id="language-menu">
+                    <a href="#" class="language-menu__country-wrapper" id="ruLanguage">
+                      <img src="/img/icons/russian.svg" alt="ru" class="language-menu__country-flag">
+                      <span class="language-menu__country-code">RU</span>
+                    </a>
+
+                    <a href="#" class="language-menu__country-wrapper" id="enLanguage">
+                      <img src="/img/icons/usa.svg" alt="en" class="language-menu__country-flag">
+                      <span class="language-menu__country-code">EN</span>
+                    </a>
+
+                    <a href="#" class="language-menu__country-wrapper" id="thLanguage">
+                      <img src="/img/icons/thailand.png" alt="cn" class="language-menu__country-flag">
+                      <span class="language-menu__country-code">TH</span>
+                    </a>
+                  </div>
+                </div>
+
+                <a href="/messages" class="dialog dialog_link chat-status h_right_panel" data-auth-token="" data-userid="">
+                  <img src="/img/icons/dialog_icon.svg" alt="">
+                  <img src="/img/icons/dialog_icon_hover.svg" alt="">
+                </a>
+  </div>
+</header>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title><%= title%></title>
+  <link rel="icon" type="image/gif/png/jpg" href="/uploads/logos/<%= logo%>">
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="/admin/vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="/admin/vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="/admin/vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="/admin/vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="/admin/vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="/admin/css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="/admin/css/app.css" id="maincss">
+  <!--Google language translate -->
+  <script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+	<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>
+	<style type="text/css">
+		  .goog-te-banner-frame.skiptranslate{display:none!important;}
+		   body{top:0px!important;}
+       .goog-te-gadget-icon {
+         display: none;
+       }
+       .goog-te-menu-value {
+         font-size: 16px;
+       }
+       #google_translate_element .goog-te-gadget-simple {
+         padding: 8px;
+         border: none;
+       }
+	</style>
+</head>
+
+<body>
+  <script type="text/javascript">
+		$.cookie('googtrans', '/en/en');
+	</script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <div class="wrapper">
+    <header class="topnavbar-wrapper">
+      <%- include('includes/navbar.ejs') -%>
+    </header>
+    <%- include('includes/sidebar.ejs') -%>
+    <% if(show == 'dashboard') {%>
+      <%- include('components/dashboard.ejs') -%>
+    <%}else if(show == 'addCategory') {%>
+      <%- include('components/category/add.ejs') -%>
+    <%}else if(show == 'editCategory') {%>
+      <%- include('components/category/edit.ejs') -%>
+    <%}else if(show == 'viewCategory') {%>
+      <%- include('components/category/view.ejs') -%>
+    <%}else if(show == 'addPost') {%>
+      <%- include('components/post/add.ejs') -%>
+    <%}else if(show == 'editPost') {%>
+      <%- include('components/post/edit.ejs') -%>
+    <%}else if(show == 'viewPost') {%>
+      <%- include('components/post/view.ejs') -%>
+    <%}else if(show == 'addAdmin') {%>
+      <%- include('components/admin/add.ejs') -%>
+    <%}else if(show == 'viewAdmin') {%>
+      <%- include('components/admin/view.ejs') -%>
+    <%}else if(show == 'viewUsers') {%>
+      <%- include('components/user/viewUser.ejs') -%>
+    <%}else if(show == 'viewUserPost') {%>
+      <%- include('components/user/viewPost.ejs') -%>
+    <%}else if(show == 'setting') {%>
+      <%- include('components/setting/profile.ejs') -%>
+    <%}else if(show == 'aboutContent') {%>
+      <%- include('components/about/edit.ejs') -%>
+    <%}else if(show == 'contactContent') {%>
+      <%- include('components/contact/edit.ejs') -%>
+    <%}else if(show == 'messageContent') {%>
+      <%- include('components/contact/message.ejs') -%>
+    <%}else if(show == 'siteSetting') {%>
+      <%- include('components/siteSetting/site.ejs') -%>
+    <%}%>
+
+    <footer>
+      <span>&copy; 2018 - <%= footer%></span>
+    </footer>
+  </div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ru,th', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="/admin/vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="/admin/vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="/admin/vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="/admin/vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="/admin/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="/admin/vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="/admin/vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="/admin/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="/admin/vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="/admin/vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- RTL demo-->
+  <script src="/admin/js/demo-rtl.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- SPARKLINE-->
+  <script src="/admin/vendor/sparkline/index.js"></script>
+  <!-- FLOT CHART-->
+  <script src="/admin/vendor/Flot/jquery.flot.js"></script>
+  <script src="/admin/vendor/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+  <script src="/admin/vendor/Flot/jquery.flot.resize.js"></script>
+  <script src="/admin/vendor/Flot/jquery.flot.pie.js"></script>
+  <script src="/admin/vendor/Flot/jquery.flot.time.js"></script>
+  <script src="/admin/vendor/Flot/jquery.flot.categories.js"></script>
+  <script src="/admin/vendor/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <!-- CLASSY LOADER-->
+  <script src="/admin/vendor/jquery-classyloader/js/jquery.classyloader.min.js"></script>
+  <!-- MOMENT JS-->
+  <script src="/admin/vendor/moment/min/moment-with-locales.min.js"></script>
+  <!-- DEMO-->
+  <script src="/admin/js/demo-flot.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="/admin/js/app.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- =============== Database Handler Scripts ===============-->
+  <script src="/admin/js/custom.js"></script>
+
+  <script>
+      $(function() {
+        $('#en').click(function() {
+          localStorage.setItem("englishLang", "active");
+          localStorage.setItem("thaiLang", "inactive");
+          localStorage.setItem("russianLang", "inactive");
+        });
+        $('#th').click(function() {
+          localStorage.setItem("englishLang", "inactive");
+          localStorage.setItem("thaiLang", "active");
+          localStorage.setItem("russianLang", "inactive");
+        });
+        $('#ru').click(function() {
+          localStorage.setItem("englishLang", "inactive");
+          localStorage.setItem("thaiLang", "inactive");
+          localStorage.setItem("russianLang", "active");
+        });
+
+        if (localStorage.getItem("englishLang") == 'active') {
+          $('#active-language').html('English');
+        }else if(localStorage.getItem("thaiLang") == 'active') {
+          $('#active-language').html('Thai');
+        }else if(localStorage.getItem("russianLang") == 'active') {
+          $('#active-language').html('Russian');
+        }
+      })
+  </script>
+</body>
+</html>

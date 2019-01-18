@@ -1,0 +1,81 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile-Thai",
+    "PROFILEDES": "Make a changes-Thai",
+    "LOGOUT": "Logout-Thai",
+    "LOGOUTDES": "Leave admin-Thai"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!-Thai"
+  },
+  "adminpost": {
+    "ADD": {
+      "HEAD": "Add New Post-Thai",
+      "TITLE": "Title-Thai",
+      "DESCRIPTION": "Description-Thai",
+      "CATEGORY": "Category-Thai",
+      "IMAGE": "Image-Thai",
+      "BUTTON": "Post Now-Thai"
+    },
+    "EDIT": {
+      "HEAD": "Edit Post-Thai",
+      "TITLE": "Title-Thai",
+      "DESCRIPTION": "Description-Thai",
+      "CATEGORY": "Category-Thai",
+      "IMAGE": "Image-Thai",
+      "BUTTON": "Change-Thai"
+    },
+    "VIEW": {
+      "HEAD": "View Admin Posts-Thai",
+      "SNO": "S.no-Thai",
+      "TITLE": "Title-Thai",
+      "DESCRIPTION": "Description-Thai",
+      "CATEGORY": "Category-Thai",
+      "IMAGE": "Image-Thai",
+      "EDITBUTTON": "Edit-Thai",
+      "DELETEBUTTON": "Delete-Thai"
+    }
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation-Thai"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard-Thai",
+      "CATEGORY": "Manage Category-Thai",
+      "category-content": {
+        "ADD": "Add Category-Thai",
+        "VIEW": "View Categories-Thai"
+      },
+      "POST": "Manage Post-Thai",
+      "post-content": {
+        "ADD": "Add Post-Thai",
+        "VIEW": "View Posts-Thai"
+      },
+      "ADMIN": "Manage Admin-Thai",
+      "admin-content": {
+        "ADD": "Add Admin-Thai",
+        "VIEW": "View Admins-Thai"
+      },
+      "USER": "Manage User-Thai",
+      "user-content": {
+        "USER": "View Users-Thai",
+        "POST": "View Posts-Thai"
+      },
+      "ABOUT": "Manage About-Thai",
+      "CONTACT": "Manage Contact-Thai",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation-Thai",
+        "MESSAGE": "Contact Messages-Thai"
+      },
+      "SITE": "Site Setting-Thai",
+      "site-content": {
+        "SETTING": "Change Setting-Thai"
+      },
+      "SETTING": "Admin Setting-Thai",
+      "setting-content": {
+        "PROFILE": "Edit Profile-Thai"
+      }
+    }
+  }
+}

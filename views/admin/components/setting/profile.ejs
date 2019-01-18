@@ -1,0 +1,88 @@
+<section>
+  <div class="content-wrapper">
+    <div class="content-heading">
+      <%- include('../../includes/language.ejs') -%>
+        <span data-localize="profile.HEAD">My Profile</span>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel widget">
+          <div class="panel-body">
+            <div class="row row-table">
+              <div class="col-xs-6 text-center">
+                <img src="/uploads/admin/<%= adminInfo.image%>" alt="Image" class="img-circle thumb96">
+              </div>
+              <div class="col-xs-6">
+                <h3 class="mt0"><%= adminInfo.username%></h3>
+                <ul class="list-unstyled">
+                  <li class="mb-sm">
+                    <em class="fa fa-envelope fa-fw"></em><%= adminInfo.email%></li>
+                </ul>
+              </div>
+            </div>
+            <hr />
+            <form role="form" action="/admin/setting/image" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label data-localize="profile.UPLOAD-IMAGE">Upload Image</label>
+                <input type="file" name="changeImage" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-sm btn-info" data-localize="profile.CHANGE-PHOTO">Change Photo</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="panel widget">
+          <div class="panel-body">
+            <form role="form" id="adminChangeSetting">
+              <div class="form-group">
+                <label data-localize="profile.NAME">User Name</label>
+                <input type="text" placeholder="User Name" id="editusername" value="<%= adminInfo.username%>" class="form-control">
+              </div>
+              <div class="form-group">
+                <label data-localize="profile.EMAIL">Email</label>
+                <input type="email" placeholder="Email" id="editemail" value="<%= adminInfo.email%>" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label for="question" data-localize="profile.QUESTION">Security Question?</label>
+                  <br/>
+                  <select class="form-control" ref="question" name="question" id="editquestion">
+                    <option value="What was your childhood nickname?" <%= (adminInfo.question=="What was your childhood nickname?")?"selected":""%>>What was your childhood nickname?</option>
+                    <option value="What is your favorite movie?" <%= (adminInfo.question=="What is your favorite movie?")?"selected":""%>>What is your favorite movie?</option>
+                    <option value="In what town was your first job?" <%= (adminInfo.question=="In what town was your first job?")?"selected":""%>>In what town was your first job?</option>
+                    <option value="What primary school did you attend?" <%= (adminInfo.question=="What primary school did you attend?")?"selected":""%>>What primary school did you attend?</option>
+                    <option value="What time of the day were you born?" <%= (adminInfo.question=="What time of the day were you born?")?"selected":""%>>What time of the day were you born?</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="editanswer" data-localize="profile.ANSWER">Answer</label>
+                  <input type="text" id="editanswer" class="form-control" value="<%= adminInfo.answer%>" placeholder="Answer">
+                </div>
+              <button type="submit" class="btn btn-sm btn-info" data-localize="profile.BUTTON-CHANGE">Change</button>
+              <button type="button" id="btnChangePassword" class="btn btn-sm btn-warning" style="float: right" data-localize="profile.CHANGE-PASSWORD">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default" id="changePass" style="display: none">
+      <div class="panel-body">
+        <form role="form" id="adminChangePassword">
+          <div class="form-group">
+            <label data-localize="profile.PASSWORD">Password</label>
+            <input type="password" placeholder="Current Password" id="currentpassword" class="form-control">
+          </div>
+          <div class="form-group">
+            <label data-localize="profile.NEW-PASSWORD">New Password</label>
+            <input type="password" placeholder="New Password" id="newpassword" class="form-control">
+          </div>
+          <div class="form-group">
+            <label data-localize="profile.CONFIRM-PASSWORD">Confirm Password</label>
+            <input type="password" placeholder="Confirm Password" id="confirmnewpassword" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-sm btn-info" data-localize="profile.SAVE-PASSWORD">Save Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

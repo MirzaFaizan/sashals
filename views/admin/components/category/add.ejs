@@ -1,0 +1,23 @@
+<section>
+  <div class="content-wrapper">
+    <div class="content-heading">
+      <%- include('../../includes/language.ejs') -%>
+      <span data-localize="category.TITLE">Add New Category</span>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form role="form" id="categoryForm">
+              <div class="form-group">
+                <label data-localize="category.FORM.CATEGORY-NAME">Category Names</label>
+                <input type="text" placeholder="Category Name" id="categoryName" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-sm btn-info" data-localize="category.FORM.BUTTON">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

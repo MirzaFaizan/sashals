@@ -1,0 +1,60 @@
+<section>
+  <div class="content-wrapper">
+    <div class="content-heading">
+      <%- include('../../includes/language.ejs') -%>
+        <span data-localize="new.VIEW.HEAD">View Admins</span>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th data-localize="new.VIEW.SNO">S.no</th>
+                    <th data-localize="new.VIEW.NAME">User Name</th>
+                    <th data-localize="new.VIEW.EMAIL">Email</th>
+                    <th data-localize="new.VIEW.ROLE">Role</th>
+                    <th>#</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% admin.forEach(function(data, key) {%>
+                    <script language="javascript">
+                      function delete<%= data._id%>(){
+                        swal({
+                          title: "Are you sure?",
+                          text: "Are you sure that you want to delete category?",
+                          icon: "warning",
+                          dangerMode: true,
+                        })
+                        .then(willDelete => {
+                          if (willDelete) {
+                            location='/admin/new/delete?id=<%= data._id%>';
+                          }
+                        });
+                      }
+                    </script>
+                    <tr>
+                      <td><%= key+1%></td>
+                      <td><%= data.username%></td>
+                      <td><%= data.email%></td>
+                      <% if(data.role == 0) {%>
+                        <td>Main Admin</td>
+                        <td><a class="btn btn-danger" data-localize="new.VIEW.DELETEBUTTON" disabled >Remove</a></td>
+                      <%}else{%>
+                        <td>Admin</td>
+                        <td><a onclick="delete<%= data._id%>()" class="btn btn-danger" data-localize="new.VIEW.DELETEBUTTON">Remove</a></td>
+                      <%}%>
+                    </tr>
+                  <%})%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

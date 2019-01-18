@@ -1,0 +1,251 @@
+div a, div a:focus {
+    color: #A6C6AF; 
+    text-decoration: none;
+}
+div a:hover {
+    color: #35493B; 
+    text-decoration: none;
+}
+
+.reglogin_container input{
+    height: 36px;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+    line-height: 100%;
+    padding: 8px 20px 8px 10px;
+    color: #000000;
+    font-size: 15px;
+}
+.reglogin_container{
+    width: 628px;
+    margin: 34px auto;
+    min-height: 60vh;
+}
+.reglogin_title{
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    color: #000000;
+}
+.reglogin_input_label{
+    font-size: 12px;
+    font-weight: bold;
+    color: #4b5664;
+    margin-bottom: 7px;
+}
+.reglogin_choose_method{
+     font-size: 12px;
+    font-weight: bold;
+    color: #c7c8cb;
+    margin-top: 33px;
+    text-transform: uppercase;
+}
+.reglogin_information_title{
+     font-size: 12px;
+    font-weight: bold;
+    color: #c7c8cb;
+    margin-top: 46px;
+    text-transform: uppercase;
+}
+
+.reglogin_main_info{
+    margin: 17px 0;
+    padding: 17px 0 29px 0;
+    border-top: solid 1px #e6ebed;
+    border-bottom: solid 1px #e6ebed;
+}
+.reglogin_main_info .input_wrap{
+    position: relative;
+}
+.reglogin_password_show_img{
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    width: 13px;
+    height: 10px;
+    cursor: pointer;
+}
+.reglogin_social_login_block_all{
+    margin-top: 7px;
+    display: inline-block;
+    height: 50px;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+}
+.reglogin_social_login_block_all:hover{
+    border: solid 1px #7dc244;
+}
+.reglogin_social_login_block_1{
+    width: 160px;
+}
+.reglogin_social_login_block_2, .reglogin_social_login_block_3, .reglogin_social_login_block_4, .reglogin_social_login_block_5{
+    width: 50px;
+}
+
+.reglogin_social_login_block_1 img{
+    width: 130px;
+    height: 27px;
+    position: absolute;
+    top: 11px;
+    left: 13px;
+}
+
+.reglogin_social_login_block_2 img{
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+.reglogin_social_login_block_3 img{
+    width: 29px;
+    height: 17px;
+    position: absolute;
+    top: 17px;
+    left: 9px;
+}
+.reglogin_social_login_block_4 img{
+    width: 31px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+.reglogin_social_login_block_5 img{
+    width: 31px;
+    height: 20px;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+.reglogin_information_block{
+    margin-top: 17px;
+    border-top: solid 1px #e6ebed;
+}
+.reglogin_information_block_in{
+    margin-top: 17px;
+}
+
+.reglogin_information_block_in .select2-container--krajee .select2-selection--single{
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+    color: #000000;
+    font-size: 15px;
+    padding-left: 0 !important;
+}
+
+.reglogin_information_block_in .select2-container--krajee .select2-selection--single .select2-selection__arrow{
+    border-left: none;
+}
+.reglogin_information_block_in .select2-container--krajee .select2-selection--single .select2-selection__arrow b{
+    border-color: #319b42 transparent transparent transparent;
+}
+.reglogin_information_block_in  .select2-container--krajee.select2-container--open .select2-selection--single .select2-selection__arrow b{
+    border-color: #319b42 transparent transparent transparent;
+}
+.reglogin_information_block .select2-container--krajee .select2-selection--single .select2-selection__rendered{
+    padding-left: 10px;
+}
+.reglogin_information_block .select2-container--krajee .select2-selection--single .select2-selection__clear{
+    right: 27px;
+}
+
+.reglogin_information_block_in label{
+    margin-bottom: 7px;
+}
+.reglogin_container .reglogin_information_block_in .form-group{
+    margin-bottom: 0;
+}
+.reglogin_information_block_in.ccwidget_country, .reglogin_information_block_in.ccwidget_city{
+    margin-bottom: 0;
+}
+.reglogin_captcha{
+    position: relative;
+}
+.reglogin_captcha .control-label{
+    display: none;
+}
+.reglogin_captcha #registrationform-captcha-image {
+    position: absolute;
+    right: -24px;
+    top: -7px;
+}
+.reglogin_captcha input {
+    width: 200px;
+}
+
+.reglog-doc{
+    display: table;
+    width: 100%;
+    margin-top: 70px;
+    font-size: 13px;
+    color: #4b5664;
+}
+.reglog-doc-cell{
+    display: table-cell;
+}
+.reglogin_container .jq-checkbox{
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+.reglogin_container .jq-checkbox.checked .jq-checkbox__div{
+    background: url(/img/registration/check_select.svg) no-repeat;
+}
+.reglogin_but{
+    text-align: left;
+}
+.reglogin_but button {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #319b42;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    min-width: 200px;
+}
+
+.loginform-forgot{
+    font-size: 14px;
+    line-height: 2.5;
+    color: #319b42;
+    text-align: right;
+}
+.reglogin_container .help-block{
+    margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+    .reglogin_container {
+        margin: 0 auto;
+        margin-top: 75px;
+    }
+}
+@media (max-width: 670px) {
+    .reglogin_container{
+        width: 100%;
+        padding: 0 15px;
+    }
+    .reglogin_captcha input {
+        width: 80%;
+    }
+}
+@media (max-width: 537px) {
+    .reglogin_captcha input {
+        width: 70%;
+    }
+}
+@media (max-width: 375px) {
+    .reglogin_captcha input {
+        width: 60%;
+    }
+}

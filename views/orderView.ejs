@@ -1,0 +1,113 @@
+<div class="main_content">
+  <section class="content service" style="margin-top: 45px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="custom_breadcrumb">
+            <li>
+              <a href="/" class="nav-home">
+                <span>Home</span>
+                <i class="icon icon_separator"></i>
+              </a>
+            </li>
+            <li class="active">
+              <a href="" id="offer-nav">
+                <span>Offer</span>
+                <i class="icon icon_separator"></i>
+              </a>
+            </li>
+            <li class="active">
+              <a href="#">
+                <span><%= offer.title%></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <aside class="service_info">
+        <div class="service_foto">
+          <span style="background-image: url(/uploads/offer/<%= offer.image%>);" class=" "></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="user_foto " style="background-image: url(/uploads/users/<%= userData.image%>)"></div>
+            <div class="user_name title">
+              <a href="/users/profile?id=<%= userData._id%>">
+                <%= userData.fname%>
+                  <%= userData.lname%>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="contact_wrap">
+          <div class="title" >Contacts</div>
+          <div class="contact_item row">
+            <div class="col-md-2 col-sm-1 col-xs-2 contact_item_icon">
+              <i class="icon icon_phone"></i>
+            </div>
+            <div class="col-md-10 col-sm-11 col-xs-10 contact_item_text">
+              <a><span><%= userData.phone%></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="skills_wrap">
+          <div class="title">Skills</div>
+          <% var skill = userData.skills.split(',') %>
+            <% skill.forEach(function(data) {%>
+              <div class="lang" style="margin-bottom: 10px">
+                <span><%= data%></span>
+              </div>
+              <%})%>
+        </div>
+        <div class="lang_wrap">
+          <div class="title">Languages</div>
+          <% var language = userData.language.split(',') %>
+            <% language.forEach(function(data) {%>
+              <div class="lang">
+                <span><%= data%></span>
+              </div>
+              <%})%>
+        </div>
+      </aside>
+
+      <section class="service_detail">
+        <div class="service_detail_descr">
+          <div class="row">
+            <div class="col-md-8">
+              <h2 class="title"><%= offer.title%></h2>
+              <div class="price">
+                from
+                <%= offer.price%>&nbsp;
+                  <span>
+                  <i class="<%= (offer.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                  <i class="<%= (offer.currency == 'Baht')?'fa fa-money':''%>"></i>
+                  <i class="<%= (offer.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                </span>
+              </div>
+              <div class="user_region">
+                <span><%= offer.country%>, <%= offer.city%></span>
+              </div>
+            </div>
+            <%if(userId == offer.userId){%>
+              <div class="col-md-4">
+                <a id="requestServiceBtn1" class="edit_link" href="/profile/offer/edit?id=<%= offer._id%>">Edit</a>
+              </div>
+              <%}else{%>
+                <div class="col-md-4">
+                  <a id="requestServiceBtn" class="edit_link" href="/messages?clientId=<%= offer.userId%>">Chat</a>
+                </div>
+                <%}%>
+          </div>
+          <div class="row" style="margin-top: 10px">
+            <div class="skill col-md-4">
+              <span class="title"><%= offer.category%></span>
+            </div>
+          </div>
+          <p>
+            <%= offer.description%>
+          </p>
+        </div>
+
+    </div>
+    </section>
+</div>

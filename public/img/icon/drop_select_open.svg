@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="12" height="8">
+    <defs>
+        <clipPath id="clip_0">
+            <rect x="-282" y="-124" width="1366" height="900" clip-rule="evenodd"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#clip_0)">
+        <path fill="#319b42" stroke="none" transform="matrix(1 0 0 -1 0 8)"
+              d="M1.41 0L6 4.94467L10.59 0L12 1.52227L6 8L0 1.52227L1.41 0Z"/>
+    </g>
+</svg>

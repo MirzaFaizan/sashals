@@ -1,0 +1,81 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile-Russian",
+    "PROFILEDES": "Make a changes-Russian",
+    "LOGOUT": "Logout-Russian",
+    "LOGOUTDES": "Leave admin-Russian"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!-Russian"
+  },
+  "adminpost": {
+    "ADD": {
+      "HEAD": "Add New Post-Russian",
+      "TITLE": "Title-Russian",
+      "DESCRIPTION": "Description-Russian",
+      "CATEGORY": "Category-Russian",
+      "IMAGE": "Image-Russian",
+      "BUTTON": "Post Now-Russian"
+    },
+    "EDIT": {
+      "HEAD": "Edit Post-Russian",
+      "TITLE": "Title-Russian",
+      "DESCRIPTION": "Description-Russian",
+      "CATEGORY": "Category-Russian",
+      "IMAGE": "Image-Russian",
+      "BUTTON": "Change-Russian"
+    },
+    "VIEW": {
+      "HEAD": "View Admin Posts-Russian",
+      "SNO": "S.no-Russian",
+      "TITLE": "Title-Russian",
+      "DESCRIPTION": "Description-Russian",
+      "CATEGORY": "Category-Russian",
+      "IMAGE": "Image-Russian",
+      "EDITBUTTON": "Edit-Russian",
+      "DELETEBUTTON": "Delete-Russian"
+    }
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation-Russian"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard-Russian",
+      "CATEGORY": "Manage Category-Russian",
+      "category-content": {
+        "ADD": "Add Category-Russian",
+        "VIEW": "View Categories-Russian"
+      },
+      "POST": "Manage Post-Russian",
+      "post-content": {
+        "ADD": "Add Post-Russian",
+        "VIEW": "View Posts-Russian"
+      },
+      "ADMIN": "Manage Admin-Russian",
+      "admin-content": {
+        "ADD": "Add Admin-Russian",
+        "VIEW": "View Admins-Russian"
+      },
+      "USER": "Manage User-Russian",
+      "user-content": {
+        "USER": "View Users-Russian",
+        "POST": "View Posts-Russian"
+      },
+      "ABOUT": "Manage About-Russian",
+      "CONTACT": "Manage Contact-Russian",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation-Russian",
+        "MESSAGE": "Contact Messages-Russian"
+      },
+      "SITE": "Site Setting-Russian",
+      "site-content": {
+        "SETTING": "Change Setting-Russian"
+      },
+      "SETTING": "Admin Setting-Russian",
+      "setting-content": {
+        "PROFILE": "Edit Profile-Russian"
+      }
+    }
+  }
+}

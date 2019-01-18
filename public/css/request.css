@@ -1,0 +1,658 @@
+section>h1{
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+}
+.viewform_right .jq-selectbox__select-text,.viewform_right  .select2-selection__rendered{
+    font-size: 16px;
+}
+.viewform_container input{
+
+}
+.viewform_container{
+    margin-bottom: 100px;
+}
+#viewform_2, #viewform_3{
+    margin-top: 42px;
+}
+.viewform_title{
+    margin-top: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 17px;
+    border-bottom: solid 1px #e6ebed;
+    font-size: 12px;
+    font-weight: 500;
+    color: #c7c8cb;
+    text-transform: uppercase;
+}
+.viewform_title img{
+  width: 12px;
+    height: 12px;
+}
+.viewform_title span{
+    margin-left: 5px;
+}
+#viewform_1 .sample_wrap .added_file_item .cover{
+    position: relative;
+    width: 100%;
+    height: 170px;
+    border-radius: 0px;
+    border: solid 1px #cacaca;
+    background-size: cover;
+    background-position: center;
+}
+#viewform_1 .sample_wrap .added_file_item .cover .add_cover {
+    display: block;
+    margin: 67px auto 0;
+    width: 173px;
+    height: 36px;
+    font-size: 15px;
+    line-height: 36px;
+    color: #319b42;
+    background-color: rgba(255, 255, 255, 0.87);
+    border-radius: 5px;
+    text-align: center;
+    border-radius: 3px;
+    border: solid 1px #319b42;
+}
+#viewform_1 .sample_wrap .added_file_item .cover .add_cover_2 {
+    display: block;
+    margin: 8px auto 0;
+    width: 231px;
+    height: 36px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #4b5664;
+    background-color: unset;
+    border-radius: 5px;
+    text-align: center;
+}
+.viewform_title_label{
+    color: #4b5664;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.viewform_name{
+    position: relative;
+}
+.viewform_name_area {
+    width: 100%;
+    height: 80px;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+    font-size: 15px;
+    outline: 0;
+    resize: none;
+    line-height: 18px;
+    color: #000000;
+    padding: 10px;
+    padding-bottom: 17px;
+}
+.viewform_price_form {
+    margin-top: 12px;
+}
+
+.viewform_price_form  {
+    margin-top: 12px;
+}
+
+.viewform_price_form label{
+    color: #4b5664;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.viewform_price_form .jqselect{
+    display: block;
+}
+
+.viewform_price_form_1 input {
+    width: 100%;
+    height: 36px;
+    padding: 0 11px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+
+.viewform_price_form_2 .jq-selectbox__select {
+    width: 100%;
+    height: 35px;
+    padding: 0 40px 0px 11px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #041736;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+.viewform_information .jq-selectbox__select {
+    width: 100%;
+    height: 35px;
+    padding: 0 40px 0px 11px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #041736;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+.viewform_information .jq-selectbox {
+    width: 100%;
+}
+.viewform_information>div>div{
+    position: relative;
+    padding-top: 20px;
+}
+.viewform_information .viewform_title_label{
+    position: absolute;
+    top: 0;
+    left: 15px;
+}
+
+.viewform_price_form_2 .jq-selectbox__trigger-arrow, .viewform_information .jq-selectbox__trigger-arrow{
+    background: url(../../../img/viewform/dropdown.svg) no-repeat 50% 50%;
+    top: 9px;
+}
+.viewform_price_form_2 .jq-selectbox.opened .jq-selectbox__trigger-arrow, .viewform_information .jq-selectbox.opened .jq-selectbox__trigger-arrow {
+    top: 10px;
+    background: url(../../../img/viewform/dropdown.svg) no-repeat 50% 50%;
+    -moz-transform: rotate(180deg); /* �仍�� Firefox */
+    -ms-transform: rotate(180deg); /* �仍�� IE */
+    -webkit-transform: rotate(180deg); /* �仍�� Safari, Chrome, iOS */
+    -o-transform: rotate(180deg); /* �仍�� Opera */
+    transform: rotate(180deg);
+}
+.control-label {
+    display: none;
+}
+.field-service-currency_id .form-control, .field-service-unit_id .form-control, .field-workrequest-currency_id .form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 100%;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    border-radius: 4px;
+}
+input.category-id {
+    opacity: 0;
+    height: 1px;
+}
+.viewform_right #viewform_1 .sample_wrap .added_file_item {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.viewform_right .sample_wrap {
+    position: relative;
+    margin-bottom: unset;
+}
+.viewform_information input{
+    width: 100%;
+    height: 36px;
+    padding: 0 11px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+.input_wrap textarea.viewform_description_area{
+    width: 100%;
+    height: 120px;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+    font-size: 16px;
+    outline: 0;
+    resize: none;
+    line-height: 18px;
+    color: #000000;
+    padding: 10px;
+    padding-bottom: 17px;
+}
+.viewform_links input{
+    height: 36px;
+    padding: 0 11px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+.viewform_links .addr_link{
+position: relative;
+    margin-top: 9px;
+}
+.viewform_add_link{
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    text-transform: UPPERCASE;
+    margin-top: 9px;
+    cursor: pointer;
+    color: #7dc244;
+}
+.view_link_delete_icon{
+    position: absolute;
+    top: 8px;
+    right: 6px;
+}
+.viewform_tags input {
+    width: 50%;
+    height: 36px;
+    padding: 0 11px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+
+#service_tags_container, #work_tags_container{
+    margin-top: 5px;
+}
+#service_tags_container .hashtag, #work_tags_container .hashtag{
+    height: 31px;
+    margin-top: 5px;
+    padding: 0 12px;
+    display: inline-block;
+    line-height: 30px;
+    border-radius: 15px;
+    border: solid 1px #319b42;
+    color: #319b42;
+}
+
+
+.category_3rd_list>ul{
+    line-height: 22px;
+}
+.category_3rd_title, .category_3rd_title2{
+    color: #777;
+}
+.category_3rd_title span{
+    margin-left: 3px;
+}
+.category_3rd_list ul li{
+    position: relative;
+    cursor: pointer;
+}
+.category_3rd_list i{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+.category_3rd_revert{
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    -moz-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.category_3rd_list>ul>li{
+    padding-left: 15px;
+}
+
+.category_3rd_container>.category_3rd_list>ul {
+    padding-left: 0px;
+}
+
+.category_3rd_list ul {
+    padding-left: 20px;
+}
+
+.category_3rd_list{
+    font-size: 14px;
+}
+
+.category_3rd_dot:hover {
+    color: #7dc244;
+    cursor: pointer;
+}
+
+.category_3rd_title{
+    padding-left: 10px;
+}
+
+.category_3rd_list .category_3rd_grade {
+    color: #319b42;
+    cursor: pointer;
+}
+.form_edite_wrap .category_3rd_chosen{
+    text-align: left;
+    color: #909090;
+    font-weight: bold;
+}
+.form_edite_wrap .category_3rd_chosen span{
+    color: #319b42;
+}
+.category_3rd_autocomplete{
+    position: relative;
+}
+.category_3rd_autocomplete i{
+    position: absolute;
+    top: 9px;
+}
+#ui-id-1{
+    z-index: 9999;
+}
+.category_3rd_possibility {
+    border-bottom: 1px solid #d7d7d7;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.category_3rd_possibility div:hover {
+    color: #7dc244;
+    cursor: pointer;
+}
+.category_3rd_possibility div{
+    padding-left: 10px;
+}
+
+
+.category_3rd_autocomplete input {
+    width: 50%;
+    height: 36px;
+    padding: 0 35px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+    border-radius: 3px;
+    border: solid 1px #cacaca;
+}
+.category_3rd_autocomplete_icon{
+    left: 9px;
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    position: absolute;
+}
+.category_3rd_container {
+    margin-top: 10px;
+}
+.category_3rd_title{
+    font-size: 16px;
+    color: #000000;
+}
+.category_3rd_container .icon_cat_arr_down {
+    width: 9px;
+    height: 12px;
+    background-image: url(../img/viewform/down.svg);
+    top: 5px;
+}
+
+.category_3rd_chosen {
+    color: #4b5664;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.category_3rd_chosen span {
+    padding-left: 5px;
+    font-size: 16px;
+    color: #7dc244;
+}
+.category_3rd_label_2{
+    color: #4b5664;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.category_3rd_possibility_label {
+    color: #4b5664;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+.category_3rd_possibility{
+    font-size: 16px;
+    color: #000000;
+}
+#viewform_3 .sample_wrap .added_file_item{
+    float: left;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+.viewform_button button {
+    width: 270px;
+    height: 50px;
+    margin-top: 39px;
+    border-radius: 3px;
+    background-color: #319b42;
+    border: none;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    text-transform: UPPERCASE;
+}
+.viewform_materials .sample_wrap .added_file_item .cover.add_file {
+    border: solid 1px #cacaca;
+    border-radius: 0;
+}
+.viewform_materials .cover_file {
+    border: solid 1px #cacaca;
+    border-radius: 0;
+    background-color: #7dc244;
+}
+.viewform_materials {
+    margin-top: 14px;
+}
+.viewform_materials  .add_service_link span{
+    border-radius: 15px;
+    border: solid 1px #319b42;
+    line-height: 30px;
+    padding: 0 14px;
+}
+.viewform_add_file_item{
+    display: table;
+    border-bottom: solid 1px #e6ebed;
+    height: 65px;
+    width:100%;
+}
+.viewform_add_file_item_cell{
+    display: table-cell;
+    vertical-align: middle;
+    width:100%;
+    position: relative;
+}
+.viewform_add_file_title{
+    font-size: 12px;
+    color: #4b5664;
+    font-weight: bold;
+    text-transform: none;
+}
+.viewform_add_file_mark{
+    color: #c7c8cb;
+    font-size: 13px;
+    text-transform: none;
+    margin-top: 2px;
+}
+.viewform_right .add_service_item .add_service_link span{
+    font-size: 12px;
+}
+.viewform_add_file_button{
+    position: absolute;
+    top: 16px;
+    right: 0;
+    line-height: 30px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    border: solid 1px #319b42;
+    letter-spacing: 0.1px;
+    color: #319b42;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.viewform_add_file_button input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+.viewform_name_counter, .viewform_description_cont div  {
+    position: absolute;
+    bottom: 9px;
+    right: 21px;
+    color: #c7c8cb;
+    font-size: 12px;
+    font-weight: 600;
+    display: none;
+}
+.viewform_name label {
+    display: none;
+}
+
+.tag_plus {
+    display: inline-block;
+    position: relative;
+    top: 13px;
+    right: 0;
+    height: 36px;
+    width: 36px;
+    background-image: url(../img/viewform/plus.svg);
+    background-size: cover;
+}
+
+.add_tag.ui-front{
+    position: relative;
+    top: -10px;
+}
+
+.field-servicelanguagetranslate-type_of_service .help-block, .field-service-field_of_activity_id .help-block, .field-workrequestlanguagetranslate-title .help-block, .field-workrequest_of_activity_id .help-block{
+    position: inherit!important;
+}
+
+.viewform_name .viewform_name_counter {
+    position: absolute;
+    top: 62px;
+    right: 21px;
+    color: #c7c8cb;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.has-error .viewform_name_area {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+    border-color: #843534;
+}
+
+.viewform_description_cont{
+    position: relative;
+}
+.viewform_left_item {
+    height: 48px;
+    line-height: 48px;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #4b5664;
+    border-bottom: solid 1px #e6ebed;
+    cursor: pointer;
+}
+.viewform_left_item.active {
+    background-color: #7dc244;
+    color: #ffffff;
+    border-bottom: none;
+}
+.viewform_left_item span {
+    font-weight: bold;
+    margin-right: 11px;
+}
+.viewform_next {
+    width: 270px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 39px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #319b42;
+    border: none;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    text-transform: UPPERCASE;
+    cursor: pointer;
+}
+.viewform_next:hover {
+    background-color: #7dc244;
+}
+
+.hashtag .delete_tag .icon_delete {
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+    position: relative;
+    top: 3px;
+    left: 7px;
+    cursor: pointer;
+}
+.hashtag .delete_tag .icon_delete:hover{
+    opacity: 1;
+}
+
+
+@media (max-width: 1100px) {
+    .searching_container {
+        /*margin-top: 80px;*/
+    }
+}
+@media (max-width: 960px) {
+    .viewform_container{
+        overflow: hidden;
+        padding-right: 15px;
+    }
+    .viewform_left{
+        display: none;
+    }
+    .viewform_right{
+        padding-left: 15px;
+    }
+    .custom_breadcrumb{
+        padding-left: 15px;
+    }
+}
+@media (max-width: 670px) {
+    .viewform_title_label {
+        margin-top: 10px;
+    }
+    .viewform_information .viewform_title_label{
+        top: -6px;
+    }
+    .viewform_information .row div:nth-child(1), .viewform_information .row div:nth-child(2) {
+        margin-bottom: 5px;
+    }
+
+    .viewform_add_file_title, .viewform_add_file_mark {
+        width: 50%;
+    }
+
+    .viewform_next,.viewform_button button {
+        margin: 39px auto;
+    }
+}

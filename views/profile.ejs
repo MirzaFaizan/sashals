@@ -1,0 +1,235 @@
+<div class="main_content">
+  <div class="content profile" style="margin-top: 58px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="custom_breadcrumb">
+            <li>
+              <a href="/" class="nav-home">
+                <span>Home</span>
+                <i class="icon icon_separator"></i>
+              </a>
+            </li>
+            <li class="active nav-profile">
+              <span>Profile</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <aside class="profile_info">
+        <div class="profile_foto empty" id="profile_img" style="position: relative; border: 1px solid; width: 200px; height: 200px; line-height: 30px; text-align: center; background-image: url(/uploads/users/<%= userData.image%>)" >
+          <form id="changeImage" method="post" action="/profile/edit-photo" enctype="multipart/form-data">
+            <input type="file" id="fileinput" name="myPic" style="opacity: 0.0; position: absolute; top:0; left: 0; bottom: 0; right:0; width: 100%; height:100%;" />
+        </form>
+        </div>
+        <div class="user_name">
+          <%= userData.fname%>
+            <%= userData.lname%>
+        </div>
+        <div class="user_region">
+          <span><%= userData.country%>, <%= userData.city%></span>
+        </div>
+
+        <div class="link_wrap">
+          <a href="/profile/edit-profile" class="edit_link">Edit profile</a>
+        </div>
+
+        <div class="contact_wrap">
+          <%if(userData.phone){%>
+            <div class="title">Contacts</div>
+            <div class="contact_item row">
+              <div class="col-md-2 col-sm-1 col-xs-2 contact_item_icon">
+                <i class="icon icon_phone"></i>
+              </div>
+              <div class="col-md-10 col-sm-11 col-xs-10 contact_item_text">
+                <a href="tel:+7 914 681-99-09"><span><%= userData.phone%></span></a>
+              </div>
+            </div>
+          <%}%>
+          <%if(userData.skype){%>
+          <div class="contact_item row">
+            <div class="col-md-2 col-xs-2 col-sm-1 contact_item_icon">
+              <i class="icon icon_skype"></i>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-11 contact_item_text">
+              <a href="<%= userData.skype%>"><span title="<%= userData.skype%>"><%= userData.skype%></span></a>
+            </div>
+          </div>
+          <%}%>
+          <%if(userData.wechat){%>
+          <div class="contact_item row">
+            <div class="col-md-2 col-xs-2 col-sm-1 contact_item_icon">
+              <i class="icon icon_chat"></i>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-11 contact_item_text">
+              <a href="<%= userData.wechat%>"><span title="<%= userData.wechat%>"><%= userData.wechat%></span></a> </div>
+          </div>
+          <%}%>
+          <%if(userData.vkontakte){%>
+          <div class="contact_item row">
+            <div class="col-md-2 col-xs-2 col-sm-1 contact_item_icon">
+              <i class="icon icon_vk"></i>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-11 contact_item_text">
+              <a href="<%= userData.vkontakte%>"><span title="<%= userData.vkontakte%>"><%= userData.vkontakte%></span></a> </div>
+          </div>
+          <%}%>
+          <%if(userData.facebook){%>
+          <div class="contact_item row">
+            <div class="col-md-2 col-xs-2 col-sm-1 contact_item_icon">
+              <i class="icon icon_fb"></i>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-11 contact_item_text">
+              <a href="<%= userData.facebook%>"><span title="<%= userData.facebook%>"><%= userData.facebook%></span></a> </div>
+          </div>
+          <%}%>
+          <%if(userData.google){%>
+          <div class="contact_item row">
+            <div class="col-md-2 col-xs-2 col-sm-1 contact_item_icon">
+              <i class="icon icon_gplus"></i>
+            </div>
+            <div class="col-md-10 col-xs-10 col-sm-11 contact_item_text">
+              <a href="<%= userData.google%>"><span title="<%= userData.google%>"><%= userData.google%></span></a> </div>
+          </div>
+          <%}%>
+        </div>
+        <%if(userData.language){%>
+          <div class="lang_wrap">
+            <div class="title">Languages</div>
+            <% var language = userData.language.split(',') %>
+              <% language.forEach(function(data) {%>
+                <div class="lang">
+                  <span><%= data%></span>
+                </div>
+                <%})%>
+          </div>
+        <%}%>
+      </aside>
+
+      <section class="profile_detail">
+        <div class="profile_descr">
+          <%if(userData.description){%>
+          <div class="profile_description">
+            <h2 class="profile_description_title title">About me</h2>
+            <p class="profile_description_body">
+              <%= userData.description%>
+            </p>
+          </div>
+          <%}%>
+          <div class="profile_service clearfix">
+            <div class="clearfix">
+              <h2 class="title">My offers</h2>
+              <div class="profile_service_item profile_service_add">
+                <div class="add_service_item">
+                  <a href="/profile/offer" class="add_service_link">
+                    <div><i class="icon icon_plus"></i></div>
+                    <span>Add an offer</span>
+                  </a>
+                </div>
+              </div>
+              <%offers.forEach(function(data) {%>
+                <div class="service-request-card service-request-card--table" style="height: auto">
+                  <a class="delete_link-work" href="/offer/delete?id=<%= data._id%>" style="float: right">
+                    <i class="icon icon_delete"></i>
+                  </a>
+                  <div class="service-request-card__date">
+                    <% var date = new Date(data.created_date)%>
+                      <%= date.toDateString()%>
+                  </div>
+                  <img src="/uploads/offer/<%= data.image%>" style="width: 100%; height: 58%" />
+                  <div class="service-request-card__title">
+                    <span class="service-request-card__title-text">
+                    <a href="/offer/view?id=<%= data._id%>"><%= data.title%></a>
+                  </span>
+                    <div class="service-request-card__price service-request-card__price--list">
+                      from
+                      <%= data.price%>&nbsp;
+                        <%= data.currency%>
+                    </div>
+                  </div>
+                  <div class="service-request-card__description">
+                    <%= data.description%>
+                  </div>
+                  <div class="service-request-card__price service-request-card__price--table">
+                    from
+                    <%= data.price%>&nbsp;
+                      <span>
+                    <i class="<%= (data.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                    <i class="<%= (data.currency == 'Baht')?'fa fa-money':''%>"></i>
+                    <i class="<%= (data.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                  </span>
+                  </div>
+                  <div class="service-request-card__divider"></div>
+                  <div class="service-request-card__user">
+                    <div class="service-request-card__user-avatar" style="background-image: url(/uploads/users/<%= userData.image%>)"></div>
+                    <div class="service-request-card__user-details">
+                      <span class="service-request-card__user-name">
+                        <a href="/users/profile?id=<%= userData._id%>"><%= userData.fname%> <%= userData.lname%></a></span>
+                      <div class="service-request-card__user-place">
+                        <span class="service-request-card__user-city">
+                      <span><%= data.country%> <%= data.city%></span> </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%})%>
+
+            </div>
+            <div class="user-profile__service-requests clearfix">
+              <h2 class="title">My requests</h2>
+              <%requests.forEach(function(data) {%>
+                <div class="service-request-card service-request-card--table" style="height: auto">
+                  <a class="delete_link-work" href="/request/delete?id=<%= data._id%>" style="float: right">
+                    <i class="icon icon_delete"></i>
+                  </a>
+                  <div class="service-request-card__date">
+                    <% var date = new Date(data.created_date)%>
+                      <%= date.toDateString()%>
+                  </div>
+                  <div class="service-request-card__title">
+                    <span class="service-request-card__title-text">
+                    <a href="/request/view?id=<%= data._id%>"><%= data.title%></a>
+                  </span>
+                    <div class="service-request-card__price service-request-card__price--list">
+                      from
+                      <%= data.price%>&nbsp;
+                        <%= data.currency%>
+                    </div>
+                  </div>
+                  <div class="service-request-card__description">
+                    <%= data.description%>
+                  </div>
+                  <div class="service-request-card__price service-request-card__price--table">
+                    from
+                    <%= data.price%>&nbsp;
+                      <span>
+                        <i class="<%= (data.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                        <i class="<%= (data.currency == 'Baht')?'fa fa-money':''%>"></i>
+                        <i class="<%= (data.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                      </span>
+                  </div>
+                  <div class="service-request-card__divider"></div>
+                  <div class="service-request-card__user">
+                    <div class="service-request-card__user-avatar" style="background-image: url(/uploads/users/<%= userData.image%>)"></div>
+                    <div class="service-request-card__user-details">
+                      <span class="service-request-card__user-name">
+                        <a href="/users/profile?id=<%= userData._id%>"><%= userData.fname%> <%= userData.lname%></a></span>
+                      <div class="service-request-card__user-place">
+                        <span class="service-request-card__user-city">
+                      <span><%= data.country%> <%= data.city%></span> </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <%})%>
+                  <a href="/profile/request" class="user-profile__add-service-request-btn">
+                    <div class="user-profile__add-icon"></div>
+                    <span class="user-profile__add-text">Add a request</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

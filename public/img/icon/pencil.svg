@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>pencil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Алексей" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Главная" transform="translate(-904.000000, -780.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="pencil" transform="translate(904.000000, 780.000000)">
+                <path d="M8.08219093,2.17386148 L10.7261796,4.82785958 L4.03351418,11.5459241 L1.39102457,8.891926 L8.08219093,2.17386148 Z M12.7324556,1.53377799 L11.5533384,0.350185958 C11.0976503,-0.107231499 10.357707,-0.107231499 9.9004707,0.350185958 L8.77099433,1.48394877 L11.414983,4.13797154 L12.7324556,2.81549905 C13.0858885,2.46070019 13.0858885,1.88855218 12.7324556,1.53377799 Z M0.00737240076,12.622334 C-0.0407448015,12.8397078 0.154771267,13.0344858 0.371347826,12.9816224 L3.31762949,12.2645503 L0.675139887,9.61055218 L0.00737240076,12.622334 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

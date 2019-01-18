@@ -1,0 +1,101 @@
+
+/*-------------------------***---------------*/
+/*---------------Standart sizes--------------*/
+/*-------------------------***---------------*/
+
+/*-------------------------***---------------*/
+/*---------------max-width: 1280px-----------*/
+/*-------------------------***---------------*/
+@media screen and (max-width: 1280px) {
+    header .head_search_wrap {
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 0 20px;
+    }
+    .main_content{
+        margin-top: 70px;
+    }
+    body .sign_into{
+        display: block;
+    }
+
+}
+/*-------------------------***---------------*/
+/*----------max-width: 1280px end------------*/
+/*-------------------------***---------------*/
+/*-------------------------***---------------*/
+/*---------------max-width: 960px------------*/
+/*-------------------------***---------------*/
+@media screen and (max-width: 960px) {
+    header .signin_wrapper{
+        display: none;
+    }
+  header .logo_main_ru {
+      display: inline-block;
+      width: 80px;
+      position: relative;
+      top: 9px;
+      height: 44px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../img/logo/bbp_by_ru.svg);
+    }
+    header .logo_main_en {
+        display: inline-block;
+        width: 80px;
+        position: relative;
+        top: 9px;
+        height: 44px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/logo/bbp_by_eng.svg);
+    }
+  header .menu_filter_link{
+      margin-left: 30px;
+  }
+}
+/*-------------------------***---------------*/
+/*-----------max-width: 960px end------------*/
+/*-------------------------***---------------*/
+/*-------------------------***---------------*/
+/*---------------max-width: 670px------------*/
+/*-------------------------***---------------*/
+@media screen and (max-width: 670px) {
+    header .header_all .entered_account{
+        padding: 10px 25px 10px 25px;
+    }
+}
+/*-------------------------***---------------*/
+/*-----------max-width: 670px end------------*/
+/*-------------------------***---------------*/
+/*-------------------------***---------------*/
+/*---------------max-width: 500px------------*/
+/*-------------------------***---------------*/
+@media screen and (max-width: 500px) {
+    header .header_lang{
+        display: none;
+    }
+    header .menu_filter_link{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    header .header_line{
+        padding-left: 20px;
+    }
+    header .header_all .entered_account{
+        padding: 10px 20px 10px 20px;
+    }
+    header .header_lang{
+        padding: 15px 20px;
+    }
+    header .h_right_panel{
+        padding: 15px 20px;
+    }
+}
+/*-------------------------***---------------*/
+/*-----------max-width: 500px end------------*/
+/*-------------------------***---------------*/

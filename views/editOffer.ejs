@@ -1,0 +1,139 @@
+<div class="main_content">
+  <div class="searching_container viewform_container">
+      <div>
+        <ul class="custom_breadcrumb">
+          <li>
+            <a href="/" class="nav-home">
+              <span>Home</span>
+              <i class="icon icon_separator"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/profile">
+              <span>Profile</span>
+              <i class="icon icon_separator"></i>
+            </a>
+          </li>
+          <li class="active">
+            <span id="edit_offer_label">Edit an offer</span>
+          </li>
+        </ul>
+      </div>
+      <div class="row" style="margin-top: 29px; margin-left: 3%">
+        <div class="searching-lg-12 searching-md-12 searching-sm-12 searching-xs-12" style="border-left: solid 1px #e6ebed;">
+          <div class="viewform_right">
+            <section id="viewform_1">
+              <h1 id="edit_offer_title">Edit information</h1>
+              <div class="viewform_title"><img src="img/viewform/about.svg" alt=""><span id="edit_offer_description">Tell us about your offer</span></div>
+              <form method="post" action="/offer/update?id=<%= offer._id%>" enctype="multipart/form-data">
+              <div class="row">
+                <div class="searching-lg-5 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="sample_wrap clearfix">
+                    <div class="added_file_item cover_image">
+                      <div class="cover">
+                        <input type="file" name="coverImage" class="hidden_input" >
+                        <span class="add_cover">Add Image</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="searching-lg-7 searching-md-6 searching-sm-6 searching-xs-12">
+                  <div class="viewform_title_label" id="edit_offer_name"> Offer title</div>
+                  <div class="viewform_name">
+                    <div class="form-group field-servicelanguagetranslate-type_of_service required">
+                      <label class="control-label" for="servicelanguagetranslate-type_of_service" id="service_label">Type of Service</label>
+                      <textarea id="servicelanguagetranslate-type_of_service" class="viewform_name_area" name="serviceTitle" rows="1" placeholder="I offer / sell / produce...
+Recommended number of characters - not more than 120" aria-required="true"><%= offer.title%></textarea>
+                      <div class="help-block"></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="searching-lg-8 searching-md-8 searching-sm-8 searching-xs-8 viewform_price_form_1">
+                      <label for="#" id="price_label">Price</label>
+                      <input type="number" id="service-price" name="servicePrice" value="<%= offer.price%>" placeholder="300"> </div>
+                    <div class="searching-lg-4 searching-md-4 searching-sm-4 searching-xs-4 viewform_price_form_1">
+                      <label for="#" id="currency_label">Currency</label>
+                      <select class="form-control" name="serviceCurrency">
+                        <option value="Dollars" <%= (offer.currency == 'Dollars')?'selected':''%>>Dollars</option>
+                        <option value="Rubles" <%= (offer.currency == 'Rubles')?'selected':''%>>Rubles</option>
+                        <option value="Baht" <%= (offer.currency == 'Baht')?'selected':''%>>Baht</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="viewform_title" style="margin-top: 30px;"><img src="img/viewform/pin.svg" style="height: 15px;" alt=""><span id="location_label">Location</span></div>
+              <div class="viewform_location">
+                <div class="row">
+                  <div class="ccwidget_country searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 reglogin_information_block_in">
+                    <label for="ccwidget_country_5ba222a6c27a4" class="reglogin_input_label" id="country_label">Country</label>
+                    <div class="input_wrap">
+                      <div class="form-group field-registrationform-first_name required">
+                        <input type="text" id="offerCountry" name="serviceCountry" value="<%= offer.country%>" placeholder="Country name" style="color: #000">
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ccwidget_city searching-lg-6 searching-md-6 searching-sm-6 searching-xs-12 reglogin_information_block_in">
+                    <label for="ccwidget_city_5ba222a6c27a4" class="reglogin_input_label" id="city_label">City</label>
+                    <div class="input_wrap">
+                      <div class="form-group field-registrationform-first_name required">
+                        <input type="text" id="offerCity" class="pass reglogin_password" value="<%= offer.city%>" name="offerCity" placeholder="City name" style="color: #000">
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="viewform_title"><img src="img/viewform/info.svg" style="height: 8px; width: 8px" alt=""><span id="extra_info_label">Extra information</span></div>
+              <div class="viewform_information">
+                <div class="row">
+                  <div class="searching-lg-3 searching-md-3 searching-sm-4 searching-xs-6">
+                    <div class="viewform_title_label" id="min_batch_label"> Minimum batch</div>
+                    <input type="number" id="service-minbatch" name="minBatch" value="<%= offer.minBatch%>" placeholder="from"> </div>
+                  <div class="searching-lg-3 searching-md-3 searching-sm-4 searching-xs-6">
+                    <input type="number" id="service-maxbatch" name="maxBatch" value="<%= offer.maxBatch%>" placeholder="to"> </div>
+                  <div class="searching-lg-3 searching-md-3 searching-sm-4 searching-xs-12">
+                    <div class="viewform_title_label" id="unit_label"> Select unit</div>
+                    <select name="unit" data-placeholder="Unit">
+                      <option value="gram" <%= (offer.unit == 'gram')?'selected':''%>>gram</option>
+                      <option value="item" <%= (offer.unit == 'item')?'selected':''%>>item</option>
+                      <option value="kilogram" <%= (offer.unit == 'kilogram')?'selected':''%>>kilogram</option>
+                      <option value="liter" <%= (offer.unit == 'liter')?'selected':''%>>liter</option>
+                      <option value="meter" <%= (offer.unit == 'meter')?'selected':''%>>meter</option>
+                      <option value="packaging" <%= (offer.unit == 'packaging')?'selected':''%>>packaging</option>
+                      <option value="running meter" <%= (offer.unit == 'running meter')?'selected':''%>>running meter</option>
+                      <option value="ton" <%= (offer.unit == 'ton')?'selected':''%>>ton</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="viewform_description">
+                <div class="viewform_title_label" style="margin-top: 14px;" id="category_label"> Category</div>
+                <div class="">
+                  <select id="service-category" class="" name="category" >
+                    <%categories.forEach(function(data) {%>
+                      <option value="<%= data.name%>" <%= (offer.category == data.name)?'selected':''%>><%= data.name%></option>
+                    <%})%>
+                  </select>
+                </div>
+              </div>
+              <div class="viewform_description">
+                <div class="viewform_title_label" style="margin-top: 14px;" id="details_label"> Describe in details the product or service you provide</div>
+                <div class="input_wrap viewform_description_cont">
+                  <textarea id="servicelanguagetranslate-description" class="viewform_description_area" name="serviceDescription" rows="1" placeholder="Recommended number of characters from 85 to 1000">
+                    <%= offer.description%>
+                  </textarea>
+                </div>
+              </div>
+              <div class="viewform_button">
+                <button type="submit" id="save" class="btn_submit" data-text="Creating...">Save Changes</button>
+              </div>
+            </form>
+            </section>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

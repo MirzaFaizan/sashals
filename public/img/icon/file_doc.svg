@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="137px" height="176px" viewBox="0 0 137 176" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>doc</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M879.501599,753.777778 C876.558986,753.777778 874.176471,751.395826 874.176471,748.45754 L874.176471,704 L809.522755,704 C805.920337,704 803,706.913682 803,710.520332 L803,857.479668 C803,861.080748 805.931073,864 809.548388,864 L917.451612,864 C921.068187,864 924,861.061927 924,857.461926 L924,753.777778 L879.501599,753.777778 L879.501599,753.777778 Z M882.169874,827.9 L871.339747,827.9 L864.573458,799.656331 C864.492182,799.290586 864.410905,798.904521 864.329628,798.498137 C864.248351,798.931613 864.167075,799.317678 864.085798,799.656331 L857.136636,827.9 L845.900126,827.9 L845.900126,827.493616 L835.07,783.400982 L846.042361,783.400982 L851.772371,812.782525 C851.772371,813.148271 851.914605,813.554655 851.975563,814.021996 C851.975563,813.554655 852.178755,813.107632 852.30067,812.640291 L859.676535,783.400982 L870.181554,783.400982 L876.866566,813.006036 C876.866566,813.270186 876.866566,813.554655 877.02912,813.859442 L877.211992,812.843483 L882.840407,783.400982 L893,783.400982 L882.169874,827.9 Z M924,747 L884.592196,747 C882.608281,747 881,745.392828 881,743.407804 L881,704 L924,747 L924,747 Z"
+              id="path-1"></path>
+        <filter x="-12.0%" y="-5.9%" width="124.0%" height="118.1%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix"
+                           in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Артем" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="my-service-page-" transform="translate(-795.000000, -701.000000)" fill-rule="nonzero">
+            <g id="doc">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

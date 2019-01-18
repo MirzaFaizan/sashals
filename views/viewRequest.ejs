@@ -1,0 +1,60 @@
+<div class="main_content">
+  <section class="content service service-request-view">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 service-request-view__breadcrumbs">
+          <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+              <a href="/" class="breadcrumbs__item-link"> Home</a>
+              <i class="icon breadcrumbs__separator"></i>
+            </li>
+            <li class="breadcrumbs__item active">
+              <a>Request</a>
+              <i class="icon breadcrumbs__separator"></i>
+            </li>
+            <li class="breadcrumbs__item breadcrumbs__item--active">
+              <span><%= requestData.title%></span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-12 service-request-view__content">
+          <div class="service-request-view__short-info">
+            <% var date = new Date(requestData.created_date)%>
+              <%= date.toDateString()%>
+          </div>
+          <h1 class="service-request-view__title">
+          <span class="service-request-view__title-text">
+            <%= requestData.title%>
+          </span>
+          <%if(userId == requestData.userId){%>
+          <a class="service-request-view__respond-link hidden-xs" href="/request/edit?id=<%= requestData._id%>">Edit request</a>
+          <%}else {%>
+            <a class="service-request-view__respond-link hidden-xs" id="requestChatBtn" href="/messages?clientId=<%= requestData.userId%>">Chat</a>
+          <%}%>
+          </h1>
+          <div class="service-request-view__price">
+            from
+            <%= requestData.price%>&nbsp;
+              <span>
+              <i class="<%= (requestData.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+              <i class="<%= (requestData.currency == 'Baht')?'fa fa-money':''%>"></i>
+              <i class="<%= (requestData.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+          </div>
+          <p class="service-request-view__description"><%= requestData.description%></p>
+
+          <div class="service-request-view__user-info">
+            <div class="service-request-view__user-avatar empty" style="background-image: url(/uploads/users/<%= userData.image%>)"></div>
+            <a class="service-request-view__user-name" href="/users/profile?id=<%= userData._id%>"><%= userData.fname%> <%= userData.lname%></a>
+            <div class="service-request-view__user-region">
+              <span class="service-request-view__user-city"><%= userData.country%> <%= userData.city%></span>
+            </div>
+            <div class="service-request-view__user-phone">
+              <img src="../images/icons/phone.svg" alt="" class="service-request-view__user-phone-icon">
+              <a class="service-request-view__user-phone-text"><%= userData.phone%></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

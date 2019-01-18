@@ -1,0 +1,253 @@
+<div class="main_content" style="margin-top: 1%">
+  <div class="searching_container search_result" data-url="/en/service/search">
+    <div class="row">
+      <div class="searching-lg-12 searching-md-12 searching-sm-12 searching-xs-12">
+        <div class="searching_filter_toggle">
+          <div class="searching_filter_toggle_cell">
+            <img src="img/search/filter-2.svg" alt="" class="searching_filter_icon">
+            <p>Filter</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="searching-lg-3 searching-md-4 searching-sm-12 searching-xs-12 search_filter aside_menu_search_container">
+        <aside class="aside_menu_search menu_search_toggle">
+          <div id="search-filter" data-pjax-container="" data-pjax-push-state data-pjax-replace-state data-pjax-timeout="1000">
+            <div class="filter_section_wrap">
+                <form action="/categories/filter" method="post">
+                <div class="section_item">
+                  <div class="searching_filter_title">Filters</div>
+                  <div class="item_select">
+                    <select id="country_list" name="searchCountry">
+                      <option value="All countries">All countries</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Austria">Austria</option>
+                      <option value="Azerbaijan">Azerbaijan</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="Angola">Angola</option>
+                      <option value="Armenia">Armenia</option>
+                      <option value="Bangladesh">Bangladesh</option>
+                      <option value="Belarus">Belarus</option>
+                      <option value="Belize">Belize</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Benin">Benin</option>
+                      <option value="Bulgaria">Bulgaria</option>
+                      <option value="Botswana">Botswana</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Hungary">Hungary</option>
+                      <option value="US Virgin Islands">US Virgin Islands</option>
+                      <option value="Vietnam">Vietnam</option>
+                      <option value="Ghana">Ghana</option>
+                      <option value="Guinea">Guinea</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Hong Kong">Hong Kong</option>
+                      <option value="Greece">Greece</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Denmark">Denmark</option>
+                      <option value="Egypt">Egypt</option>
+                      <option value="Israel">Israel</option>
+                      <option value="India">India</option>
+                      <option value="Indonesia">Indonesia</option>
+                      <option value="Iran">Iran</option>
+                      <option value="Ireland">Ireland</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Kazakhstan">Kazakhstan</option>
+                      <option value="Cambodia">Cambodia</option>
+                      <option value="Cameroon">Cameroon</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Kenya">Kenya</option>
+                      <option value="Cyprus">Cyprus</option>
+                      <option value="China">China</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Kyrgyzstan">Kyrgyzstan</option>
+                      <option value="Latvia">Latvia</option>
+                      <option value="Liberia">Liberia</option>
+                      <option value="Lithuania">Lithuania</option>
+                      <option value="Mauritania">Mauritania</option>
+                      <option value="Malta">Malta</option>
+                      <option value="Morocco">Morocco</option>
+                      <option value="Moldova">Moldova</option>
+                      <option value="Mongolia">Mongolia</option>
+                      <option value="Nepal">Nepal</option>
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="Norway">Norway</option>
+                      <option value="United Arab Emirates">United Arab Emirates</option>
+                      <option value="Pakistan">Pakistan</option>
+                      <option value="Paraguay">Paraguay</option>
+                      <option value="Peru">Peru</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Portugal">Portugal</option>
+                      <option value="Russia">Russia</option>
+                      <option value="Romania">Romania</option>
+                      <option value="Serbia">Serbia</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Slovakia">Slovakia</option>
+                      <option value="Slovenia">Slovenia</option>
+                      <option value="Suriname">Suriname</option>
+                      <option value="United States">United States</option>
+                      <option value="Tajikistan">Tajikistan</option>
+                      <option value="Thailand">Thailand</option>
+                      <option value="Taiwan">Taiwan</option>
+                      <option value="Tanzania">Tanzania</option>
+                      <option value="Togo">Togo</option>
+                      <option value="Turkmenistan">Turkmenistan</option>
+                      <option value="Turkey">Turkey</option>
+                      <option value="Uganda">Uganda</option>
+                      <option value="Uzbekistan">Uzbekistan</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="Uruguay">Uruguay</option>
+                      <option value="Philippines">Philippines</option>
+                      <option value="Finland">Finland</option>
+                      <option value="France">France</option>
+                      <option value="Montenegro">Montenegro</option>
+                      <option value="Czechia">Czechia</option>
+                      <option value="Chile">Chile</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Ecuador">Ecuador</option>
+                      <option value="Estonia">Estonia</option>
+                      <option value="South Korea">South Korea</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="Japan">Japan</option>
+                    </select>
+                  </div>
+                  <div class="item_select">
+                    <select id="currency_list" name="searchCurrency">
+                      <option value="All currencies">All currencies</option>
+                      <option value="Ruble">Ruble</option>
+                      <option value="Dollar">Dollar</option>
+                      <option value="Baht">Baht</option>
+                    </select>
+                  </div>
+                  <div class="section_item section_item_btn">
+                    <input type="submit" class="btn btn-success" id="filter-btn" style="margin-top: 12px" value="Filter Now">
+                  </div>
+                </div>
+                </form>
+                <div class="section_item_category">
+                  <div class="category_wrap">
+                    <%categories.forEach(function(data) {%>
+                      <a href="/categories/<%= data.name%>">
+                        <div class="item_title">
+                          <span><%= data.name%></span>
+                          <i class="icon icon_cat_arr_down"></i>
+                        </div>
+                      </a>
+                    <%})%>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </aside>
+      </div>
+      <div class="searching-lg-9 searching-md-8 searching-sm-12 searching-xs-12 search_result__content">
+        <section class="content">
+          <div class="">
+            <div class="row items-container">
+              <div class="showoffer">
+                <div class="last_added clearfix">
+                  <div class="profile_service search" id="search-service-result">
+                    <%offers.forEach(function(data) {%>
+                    <div class="searching-lg-4 searching-md-6 searching-xs-12 text-center" style="padding-left: 0px; padding-right: 0px;">
+                      <div class="searching_card_item">
+                        <a class="searching_card_item_image " href="/offer/view?id=<%= data._id%>" style="background-image: url(/uploads/offer/<%= data.image%>)!important"><span class="searching_card_item_glass"></span></a>
+                        <div class="searching_card_item_title">
+                          <a href="/offer/view?id=<%= data._id%>"><%= data.title%></a> </div>
+                        <div class="searching_card_item_description">
+                          <%= data.description%>
+                        </div>
+                        <div class="searching_card_item_price">
+                          from <%= data.price%>&nbsp;
+                            <span>
+                              <i class="<%= (data.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                              <i class="<%= (data.currency == 'Euro')?'fa fa-euro-sign':''%>"></i>
+                              <i class="<%= (data.currency == 'Yuan')?'fa fa-yandex-international':''%>"></i>
+                              <i class="<%= (data.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                            </span>
+                        </div>
+                        <div class="searching_card_item_footer">
+                          <div class="searching_card_item_footer_avatar">
+                            <%userData.forEach(function(user) {%>
+                              <%if(user._id == data.userId){%>
+                                <div class="" style="background-image: url(/uploads/users/<%= user.image%>)!important"></div>
+                              <%}else {%>
+                                <i class="icon icon_user suggestions_icon_default"></i>
+                              <%}%>
+                            <%})%>
+                          </div>
+                          <div class="searching_card_item_footer_info">
+                            <%userData.forEach(function(user) {%>
+                              <%if(user._id == data.userId){%>
+                                <div class="searching_card_item_footer_info_name"><a href="/users/profile?id=<%= data.userId%>"><%= user.fname%> <%= user.lname%></a></div>
+                              <%}%>
+                            <%})%>
+                            <div class="searching_card_item_footer_info_town">
+                              <span><%= data.country%>, <%= data.city%></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%})%>
+                  </div>
+                </div>
+              </div>
+
+              <div class="showrequest">
+                <div class="last_added clearfix">
+                  <div class="profile_service search" id="search-service-result">
+                    <%requests.forEach(function(data) {%>
+                    <div class="suggestions_services_item">
+                      <div class="suggestions_services_item_text">
+                        <h2><a href="/request/view?id=<%= data._id%>"><%= data.title%></a></h2>
+                        <p><%= data.description%></p>
+                        <div class="price">
+                          from <%= data.price%>&nbsp;
+                            <span>
+                              <i class="<%= (data.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                              <i class="<%= (data.currency == 'Euro')?'fa fa-euro-sign':''%>"></i>
+                              <i class="<%= (data.currency == 'Yuan')?'fa fa-yandex-international':''%>"></i>
+                              <i class="<%= (data.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                            </span>
+                        </div>
+                      </div>
+                      <div class="suggestions_services_item_operator">
+                        <div class="suggestions_services_item_operator_img" style="width: 0px; height: 0px">
+                          <%userData.forEach(function(user) {%>
+                            <%if(user._id == data.userId){%>
+                              <div class="service-request-card__user-avatar" style="background-image: url(/uploads/users/<%= user.image%>)"></div>
+                            <%}else {%>
+                              <i class="icon icon_user suggestions_icon_default"></i>
+                            <%}%>
+                          <%})%>
+                        </div>
+                        <div class="suggestions_services_item_operator_text">
+                          <div class="oper_name">
+                            <%userData.forEach(function(user) {%>
+                              <%if(user._id == data.userId){%>
+                                <a href="/users/profile?id=<%= data.userId%>"><%= user.fname%> <%= user.lname%></a>
+                              <%}%>
+                            <%})%>
+                          </div>
+                          <div class="oper_town">
+                            <span><%= data.country%></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <%})%>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>

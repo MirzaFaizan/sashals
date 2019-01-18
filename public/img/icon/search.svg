@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-1.0%" y="-3.6%" width="102.0%" height="110.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Алексей" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Главная" transform="translate(-195.000000, -346.000000)" fill="#296CE0">
+            <g id="Поиск" filter="url(#filter-1)" transform="translate(0.000000, 267.000000)">
+                <path d="M214.458081,92.9858892 C215.200347,91.9492071 215.635792,90.6815242 215.635792,89.3178959 C215.635792,85.8284734 212.807318,83 209.317896,83 C205.828473,83 203,85.8284734 203,89.3178959 C203,92.8073185 205.828473,95.6357919 209.317896,95.6357919 C210.640599,95.6357919 211.873029,95.226092 212.89193,94.5240796 C213.005975,94.4455037 214.321401,95.6933922 216.838207,98.2677451 L216.838205,98.267747 C217.2285,98.6669662 217.868528,98.6742006 218.267747,98.2839055 C218.27047,98.281243 218.273179,98.2785651 218.275872,98.2758719 L218.275872,98.2758719 L218.275872,98.2758719 C218.665881,97.8858624 218.665881,97.2535319 218.275872,96.8635224 C218.270297,96.8579476 218.264656,96.852439 218.258951,96.8469977 C215.658088,94.3664343 214.391121,93.0794093 214.458081,92.9858892 Z M204.943968,89.3178959 C204.943968,86.8976558 206.897656,84.943968 209.317896,84.943968 C211.738136,84.943968 213.691824,86.8976558 213.691824,89.3178959 C213.691824,91.7381361 211.738136,93.6918239 209.317896,93.6918239 C206.897656,93.6918239 204.943968,91.7381361 204.943968,89.3178959 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

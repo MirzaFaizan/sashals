@@ -1,0 +1,62 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile",
+    "PROFILEDES": "Make a changes",
+    "LOGOUT": "Logout",
+    "LOGOUTDES": "Leave admin"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!"
+  },
+  "user": {
+    "USER": {
+      "HEAD": "View Users",
+      "SNO": "S.no",
+      "NAME": "User Name",
+      "EMAIL": "Email",
+      "DELTEBUTTON": "Remove"
+    }
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard",
+      "CATEGORY": "Manage Category",
+      "category-content": {
+        "ADD": "Add Category",
+        "VIEW": "View Categories"
+      },
+      "POST": "Manage Post",
+      "post-content": {
+        "ADD": "Add Post",
+        "VIEW": "View Posts"
+      },
+      "ADMIN": "Manage Admin",
+      "admin-content": {
+        "ADD": "Add Admin",
+        "VIEW": "View Admins"
+      },
+      "USER": "Manage User",
+      "user-content": {
+        "USER": "View Users",
+        "POST": "View Posts"
+      },
+      "ABOUT": "Manage About",
+      "CONTACT": "Manage Contact",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation",
+        "MESSAGE": "Contact Messages"
+      },
+      "SITE": "Site Setting",
+      "site-content": {
+        "SETTING": "Change Setting"
+      },
+      "SETTING": "Admin Setting",
+      "setting-content": {
+        "PROFILE": "Edit Profile"
+      },
+    }
+  }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title><%= title%></title>
+  <link rel="icon" type="image/gif/png/jpg" href="/uploads/logos/<%= logo%>">
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="/admin/vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="/admin/vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="/admin/css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="/admin/css/app.css" id="maincss">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="block-center mt-xl wd-xl">
+      <!-- START panel-->
+      <div class="panel panel-dark panel-flat">
+        <div class="panel-heading text-center">
+          <a href="#">
+            <img src="/uploads/logos/<%= logo%>" alt="Image" class="block-center img-rounded" style="height: 100px">
+          </a>
+        </div>
+        <div class="panel-body">
+          <p class="text-center pv">SIGN IN TO CONTINUE.</p>
+          <form role="form" id="adminLogin">
+            <div class="form-group has-feedback">
+              <input id="exampleInputEmail1" type="email" placeholder="Enter email" autocomplete="off" class="form-control">
+              <span class="fa fa-envelope form-control-feedback text-muted"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input id="exampleInputPassword1" type="password" placeholder="Password" class="form-control">
+              <span class="fa fa-lock form-control-feedback text-muted"></span>
+            </div>
+            <div class="clearfix">
+              <div class="pull-right"><a href="/admin/login/verify-admin" class="text-muted">Forgot your password?</a>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary mt-lg">Login</button>
+          </form>
+        </div>
+      </div>
+      <!-- END panel-->
+      <div class="p-lg text-center">
+        <span>&copy;</span>
+        <span>2018</span>
+        <span>-</span>
+        <span><%= footer%></span>
+        <span style="float: right"><a href="/">HOME</a></span>
+        <br>
+      </div>
+    </div>
+  </div>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="/admin/vendor/modernizr/modernizr.custom.js"></script>
+  <!-- JQUERY-->
+  <script src="/admin/vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="/admin/vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="/admin/vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- PARSLEY-->
+  <script src="/admin/vendor/parsleyjs/dist/parsley.min.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="/admin/js/app.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    $(function() {
+      $('#adminLogin').submit(function(event) {
+        event.preventDefault();
+        var email = $('#exampleInputEmail1').val().trim().toLowerCase();
+        var password = $('#exampleInputPassword1').val().trim();
+
+        if (typeof email !== "undefined") {
+          let lastAtPos = email.lastIndexOf('@');
+          let lastDotPos = email.lastIndexOf('.');
+          if (!(lastAtPos < lastDotPos && lastAtPos > 0 && email.indexOf('@@') == -1 && lastDotPos > 2 && (email.length - lastDotPos) > 2)) {
+            swal('Oops!','Invalid Email', 'error');
+            return;
+          }
+        }
+        if (!email) {
+          swal('Oops!','Email is required', 'error');
+          return;
+        }
+        if (!password) {
+          swal('Oops!','Password is required', 'error');
+          return;
+        }
+        var data = {};
+        data.email = email;
+        data.password = password
+        $.ajax({
+          method: 'POST',
+          url: '/admin/login',
+          data: JSON.stringify(data),
+          contentType: 'application/json',
+          success: function(response) {
+            let message = response.message;
+            if (response.success) {
+              setTimeout(function() {
+                window.location.href = '/admin';
+              }, 500)
+            } else {
+              swal('Oops!', message, 'error');
+            }
+          }
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>

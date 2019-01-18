@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <%if(sites[0]){%>
+    <link rel="icon" type="image/gif/png/jpg" href="/uploads/logos/<%= sites[0].image%>">
+  <%}%>
+  <title><%= title%></title>
+  <link href="/assets/646d83a7/css/bootstrapce22.css?v=1523537015" rel="stylesheet">
+  <link href="/assets/4756acaf/build/css/intlTelInputb1cb.css?v=1535538976" rel="stylesheet">
+  <link href="/css/font-awesome.min67a5.css?v=1527006189" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="/css/slick0213.css?v=1531900620" rel="stylesheet">
+  <link href="/css/search9c9e.css" rel="stylesheet">
+  <link href="/css/style0350.css?v=1536668328" rel="stylesheet">
+  <link href="/css/registration.css" rel="stylesheet">
+  <link href="/css/profile.css" rel="stylesheet">
+  <link href="/css/edit-profile.css" rel="stylesheet">
+  <link href="/css/request.css" rel="stylesheet">
+  <link href="/css/chat.css" rel="stylesheet">
+  <link href="/css/media7972.css?v=1537170316" rel="stylesheet">
+  <link href="/assets/b55e15bb/css/flag-icon.mince22.css?v=1523537015" rel="stylesheet">
+  <link href="/libs/bootstrap/bootstrap_grid_3.3.1.min9d2d.css?v=1509472299" rel="stylesheet">
+  <link href="/css/searchinggrid0350.css?v=1536668328" rel="stylesheet">
+  <link href="/libs/jq_form_styler/jquery_formstyler9d2d.css?v=1509472299" rel="stylesheet">
+  <link href="/libs/jq_form_styler/jquery_formstyler_theme9d2d.css?v=1509472299" rel="stylesheet">
+  <link href="/libs/custom_scrollbar/custom_scrollbar9d2d.css?v=1509472299" rel="stylesheet">
+  <link href="/libs/raty/jquery.raty9d2d.css?v=1509472299" rel="stylesheet">
+  <link href="/css/reset9d2d.css?v=1509472299" rel="stylesheet">
+  <link href="/css/main_style8537.css?v=1536826129" rel="stylesheet">
+  <link href="/css/media_style0350.css?v=1536668328" rel="stylesheet">
+  <link href="/css/main_mediab2f9.css?v=1534340323" rel="stylesheet">
+  <link href="/fonts-new/fonts67a5.css?v=1527006189" rel="stylesheet">
+  <link href="/css/components2aa7.css?v=1534513094" rel="stylesheet">
+
+  <script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+		<script src="http://cdn.howcode.org/content/static/javascript/jquery.cookie.js"></script>
+		<style type="text/css">
+		  .goog-te-banner-frame.skiptranslate{display:none!important;}
+		   body{top:0px!important;}
+       .goog-te-gadget-icon {
+         display: none;
+       }
+       .goog-te-menu-value {
+         font-size: 16px;
+       }
+       #google_translate_element .goog-te-gadget-simple {
+         padding: 8px;
+         border: none;
+       }
+		</style>
+  <script>
+    var USER_AUTH = 0;
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+		$.cookie('googtrans', '/en/en');
+	</script>
+
+
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <%- include('includes/header.ejs') -%>
+
+  <div class="searching_container"></div>
+  <%if(show == 'home'){%>
+    <%- include('home.ejs') -%>
+  <%}else if(show == 'login'){%>
+    <%- include('login.ejs') -%>
+  <%}else if(show == 'resetPassword'){%>
+    <%- include('reset-password.ejs') -%>
+  <%}else if(show == 'register'){%>
+    <%- include('registration.ejs') -%>
+  <%}else if(show == 'profile'){%>
+    <%- include('profile.ejs') -%>
+  <%}else if(show == 'editProfile'){%>
+    <%- include('edit-profile.ejs') -%>
+  <%}else if(show == 'request'){%>
+    <%- include('request.ejs') -%>
+  <%}else if(show == 'offer'){%>
+    <%- include('offer.ejs') -%>
+  <%}else if(show == 'editOffer'){%>
+    <%- include('editOffer.ejs') -%>
+  <%}else if(show == 'categoryView'){%>
+    <%- include('categoryView.ejs') -%>
+  <%}else if(show == 'orderView'){%>
+    <%- include('orderView.ejs') -%>
+  <%}else if(show == 'viewRequest'){%>
+    <%- include('viewRequest.ejs') -%>
+  <%}else if(show == 'editRequest'){%>
+    <%- include('editRequest.ejs') -%>
+  <%}else if(show == 'user'){%>
+    <%- include('user.ejs') -%>
+  <%}else if(show == 'chat'){%>
+    <%- include('chat.ejs') -%>
+  <%}%>
+
+  <%- include('includes/footer.ejs') -%>
+
+  <div id="reset_password" data-pjax-container="" data-pjax-timeout="1000">
+    <div class="popup recovery_pass_0" id="popup_recovery_pass_0">
+      <div class="recovery_wrap">
+        <h2 class="title">Password recovery</h2>
+        <p class="description" id="success-reset-password">Insert the email used during registration</p>
+        <form id="recovery_pass_form" >
+          <div class="input_wrap">
+            <div class="form-group field-passwordresetrequestform-email required">
+              <i class="icon icon_message"></i>
+              <input type="text" id="passwordresetrequestform-email" class="" name="PasswordResetRequestForm[email]" autofocus placeholder="E-mail" aria-required="true">
+              <p class="help-block help-block-error"></p>
+            </div>
+          </div>
+          <div class="btn_wrap clearfix">
+            <a id="cancel" class="cancel_btn" href="#">Cancel</a>
+            <button type="submit" id="save" class="recover_btn">Recover</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="popup popup_feedback" id="popup_feedback_open">
+    <div class="form_feedback">
+      <h2 class="title">Send feedback</h2>
+      <form id="feedback_form" class="form_registration_0_id" action="#" method="post">
+        <input type="hidden" name="_csrf-frontend" value="LYolFOqMzmBMAX1wY6s4LCTIMniVDWcEqWNceMQNrfVn63xB0uunNztXSR1T8VBWRqx6GvpXVkmEJW89r2XexQ==">
+        <div class="input_wrap">
+          <i class="icon icon_user_registr_2" style="top: 2px"></i>
+          <input type="text" id="feedback-name" name="Feedback[name]" placeholder="Name"> </div>
+        <div class="input_wrap">
+          <i class="icon icon_email"></i>
+          <input type="text" id="feedback-email" name="Feedback[email]" placeholder="E-mail"> </div>
+        <div class="input_wrap">
+          <i class="icon icon_pencil" style="height: 21px; top: 5px;"></i>
+          <textarea id="feedback-message" name="Feedback[message]" placeholder="Message"></textarea>
+        </div>
+        <div class="btn_wrap clearfix" style="margin-top: 14px;">
+          <button type="button" class="prev_btn">Cancel</button>
+          <button type="submit" class="next_btn">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <%- include('includes/sidebar.ejs') -%>
+  <div class="aside_menu_overlay"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ru,th', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+  <script src="/assets/213bd420/jqueryce22.js?v=1523537015"></script>
+  <script src="/assets/cc4477fd/yiice22.js?v=1523537015"></script>
+  <script src="/assets/4756acaf/build/js/utilsb1cb.js?v=1535538976"></script>
+  <script src="/assets/4756acaf/build/js/intlTelInput.minb1cb.js?v=1535538976"></script>
+  <script src="/js/lib/countUp1868.js?v=1521556828"></script>
+  <script src="/js/main_page67a5.js?v=1527006189"></script>
+  <script src="/js/slick.min67a5.js?v=1527006189"></script>
+  <script src="/js/main2991.js?v=1528406537"></script>
+  <script src="/js/profile2991.js"></script>
+  <script src="/js/edit-profile.js"></script>
+  <script src="/assets/cc4477fd/yii.activeFormce22.js?v=1523537015"></script>
+  <script src="/assets/646d83a7/js/bootstrapce22.js?v=1523537015"></script>
+  <script src="/libs/jq_form_styler/jquery_formstyler9d2d.js?v=1509472299"></script>
+  <script src="/libs/custom_scrollbar/custom_scrollbar.min9d2d.js?v=1509472299"></script>
+  <script src="/libs/raty/jquery.raty9d2d.js?v=1509472299"></script>
+  <script src="/libs/autosize9d2d.js?v=1509472299"></script>
+  <script src="/libs/dragscroll1868.js?v=1521556828"></script>
+  <script src="/js/form_styler_init9d2d.js?v=1509472299"></script>
+  <script src="/js/main_script0350.js?v=1536668328"></script>
+  <script src="http://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+  <script src="http://yastatic.net/share2/share.js"></script>
+  <script src="/js/components2aa7.js?v=1534513094"></script>
+  <script src="/assets/cc4477fd/yii.validationce22.js?v=1523537015"></script>
+  <script src="/assets/157e4a11/jquery.pjaxa662.js?v=1523537016"></script>
+  <script src="/js/request.js"></script>
+  <script src="/js/chat.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="/js/custom.js"></script>
+
+  <script>
+    jQuery(function($) {
+      var languages;
+      function getLanguage(language) {
+        return ($.ajax({
+            type: "get",
+            url: "/multi-language?id="+language,
+            dataType: "json",
+            global: false,
+            async:false,
+            success: function(data) {
+              return data;
+            },
+            error: function(){
+                console.log("json not found");
+            }
+        }).responseText);
+      }
+      function setLanguages(languages) {
+        var lang = JSON.parse(languages);
+        $('.signin_wrapper .login_account a').html(lang.login_account);
+        $('.signin_wrapper .create_account a').html(lang.create_account);
+        $('.sign_into .sign_into_login').html(lang.login_account);
+        $('.sign_into .sign_into_create').html(lang.create_account);
+        if($('.dropdown_btn span').html() == $('#searchOffer').html() ||
+        $('.search-row__selector-button span').html() == $('#searchOffer').html()) {
+          $('.dropdown_btn span').html(lang.offers)
+          $('.search-row__selector-button span').html(lang.offers);
+        }else if($('.dropdown_btn span').html() == $('#searchRequest').html() ||
+        $('.search-row__selector-button span').html() == $('#searchRequest').html()) {
+          $('.dropdown_btn span').html(lang.requests)
+          $('.search-row__selector-button span').html(lang.requests);
+        }
+        $('#searchOffer').html(lang.offers);
+        $('#searchRequest').html(lang.requests);
+        $('.jumbo_text').html(lang.landing_text);
+        $('.jumbo_contagent_banner_text_1').html(lang.landing_head);
+        $('.jumbo_contagent_banner_text_2').html(lang.landing_info);
+        $('.suggestions_h').html(lang.recent_offer);
+        $('#query-input').attr("placeholder", lang.search_placeholder);
+        $('.reglogin_title').html(lang.login_title);
+        $('.reglogin_email_label').html(lang.login_email);
+        $('#loginform-email').attr("placeholder", lang.login_email_placeholder);
+        $('.reglogin_password_label').html(lang.login_password);
+        $('#loginform-password').attr("placeholder", lang.login_forget_password);
+        $('.loginform-forgot').html(lang.login_forget_password);
+        $('#user-login-btn').html(lang.login_button);
+        $('.reglogin_title_register').html(lang.register_title);
+        $('.reglogin_choose_method').html(lang.register_message);
+        $('.reglogin_email_label').html(lang.login_email);
+        $('#registrationform-email').attr("placeholder", lang.login_email_placeholder);
+        $('.reglogin_password_label').html(lang.login_password);
+        $('#registrationform-password').attr("placeholder", lang.login_password_placeholder)
+        $('.reglogin_confirm_label').html(lang.confirm_password);
+        $('#registrationform-cpassword').attr("placeholder", lang.confirm_password);
+        $(".reglogin_information_title").html(lang.register_information_title);
+        $(".reglogin_country_label").html(lang.register_country);
+        $("#registrationform-country").attr("placeholder", lang.register_country);
+        $(".reglogin_city_label").html(lang.register_city);
+        $("#registrationform-city").attr("placeholder", lang.register_city);
+        $('.reglogin_fname_label').html(lang.register_fname);
+        $("#registrationform-first_name").attr("placeholder", lang.register_fname);
+        $('.reglogin_lname_label').html(lang.register_fname);
+        $("#registrationform-last_name").attr("placeholder", lang.register_lname);
+        $('.reglogin_phone_label').html(lang.register_phone);
+        $("#registrationform-phone_number").attr("placeholder", lang.register_phone);
+        $('#register_btn').html(lang.register_btn);
+        $('#nav-profile li').html(lang.nav_profile);
+        $('#nav-logout li').html(lang.nav_logout);
+
+        $('.nav-home span').html(lang.nav_home);
+        $('.nav-profile span').html(lang.nav_profile);
+        $('.edit_link').html(lang.profile_edit);
+        $('.contact_wrap .title').html(lang.profile_contact);
+        $('.lang_wrap .title').html(lang.profile_language);
+        $('.profile_description_title').html(lang.profile_description);
+        $('.profile_service .title').html(lang.profile_offer);
+        $('.add_service_link span').html(lang.profile_add_offer);
+        $('.profile__service-requests h2').html(lang.profile_request);
+        $('.user-profile__add-service-request-btn span').html(lang.profile_add_request);
+
+        $('.searching_filter_toggle_cell p').html(lang.filter);
+        $('.searching_filter_title').html(lang.filter);
+        $('#filter-btn').attr("value", lang.filter_btn);
+        $('#edit_label span').html(lang.profile_edit_label);
+        $('.viewform_left_item_1').html(lang.profile_edit_side_item1);
+        $('.viewform_left_item_2').html(lang.profile_edit_side_item2);
+        $('.viewform_left_item_3').html(lang.profile_edit_side_item3);
+        $('.viewform_title_first span').html(lang.profile_edit_password_title);
+        $('.viewform_current_label').html(lang.profile_edit_current_pass_label);
+        $('.viewform_new_label').html(lang.profile_edit_new_pass_label);
+        $('.viewform_confir_label').html(lang.profile_edit_confirm_pass_label);
+        $('.profile-save-change').attr("value", lang.btn_save_change);
+        $('.viewform_title_first span').html(lang.profile_edit_login_title);
+        $('.viewform_email_label').html(lang.login_email);
+        $('.viewform_password_label').html(lang.login_password);
+        $('#password_change').html(lang.btn_change_password);
+        $('.viewform_fname_label').html(lang.register_fname);
+        $('.viewform_lname_label').html(lang.register_lname);
+        $('#personal_label').html(lang.profile_edit_personal);
+        $('#location_label').html(lang.profile_edit_location);
+        $('#country_label').html(lang.register_country);
+        $('#city_label').html(lang.register_city);
+        $('#contact_label').html(lang.profile_contact);
+        $('#skype_label').html(lang.skype_label);
+        $('#wechat_label').html(lang.wechat_label);
+        $('#vkontakte_label').html(lang.vkontakte_label);
+        $('#facebook_label').html(lang.facebook_label);
+        $('#google_label').html(lang.google_label);
+        $('#company_data_label').html(lang.company_title);
+        $('#company_inc_label').html(lang.company_country_title);
+        $('#company_id_label').html(lang.company_identify);
+        $('#company_name_label').html(lang.company_name);
+        $('#company_phone_label').html(lang.company_phone);
+        $('#company_address_label').html(lang.company_address);
+        $('#info_label').html(lang.user_info);
+        $('#info_sub_label').html(lang.user_sub_info);
+        $('#language_label').html(lang.user_language);
+        $('#skill_label').html(lang.user_skill);
+        $('.profile-save-change').attr("value", lang.btn_save_change);
+        $('#edit_offer_label').html(lang.edit_offer_label);
+        $('#edit_offer_title').html(lang.offer_title);
+        $('#edit_offer_description').html(lang.offer_description);
+        $('.add_cover').html(lang.add_image);
+        $('#edit_offer_name').html(lang.offer_name);
+        $('#service_label').html(lang.offer_type);
+        $('#price_label').html(lang.price);
+        $('#currency_label').html(lang.currency);
+        $('#extra_info_label').html(lang.extra_info);
+        $('#min_batch_label').html(lang.batch_title);
+        $('#service-minbatch').attr("placeholder", lang.batch_from);
+        $('#service-maxbatch').attr("placeholder", lang.batch_to);
+        $('#unit_label').html(lang.unit);
+        $('#category_label').html(lang.category);
+        $('#details_label').html(lang.details_product);
+        $('#save').html(lang.btn_save_change);
+        $('#edit_request_label').html(lang.edit_request_label);
+        $('#request_info_label').html(lang.request_title);
+        $('#request_description_label').html(lang.request_description);
+        $('#request_title_label').html(lang.request_title_label);
+        $('#reqest_name_label').html(lang.request_name);
+        $('#details_required').html(lang.request_description);
+        $('.skills_wrap .title').html(lang.skills);
+        $('#requestServiceBtn').html(lang.chat);
+        $('#requestChatBtn').html(lang.chat);
+        $('.breadcrumbs__item-link').html(lang.nav_home);
+        $('.recovery_wrap h2').html(lang.password_recover_title);
+        $('#success-reset-password').html(lang.reset_email_title);
+        $('.cancel_btn').html(lang.cancel_btn);
+        $('.recover_btn').html(lang.recover_btn);
+        $('#change_password h1').html(lang.password_change_title);
+        $('.enter_btn').html(lang.enter_btn);
+
+      }
+      if(localStorage.getItem("language")) {
+        setLanguages(getLanguage(localStorage.getItem("language")))
+        if(localStorage.getItem("language") == "English") {
+          $('#currentLanguage').html('<div class="language_flag"><img src="/img/icons/usa.svg" alt="" id="language_flag"></div><div class="language_name" id="language_name">EN</div>')
+        } else if(localStorage.getItem("language") == "Russian") {
+          $('#currentLanguage').html('<div class="language_flag"><img src="/img/icons/russian.svg" alt="" id="language_flag"></div><div class="language_name" id="language_name">RU</div>')
+        } else if(localStorage.getItem("language") == "Thai") {
+          $('#currentLanguage').html('<div class="language_flag"><img src="/img/icons/thailand.png" alt="" id="language_flag"></div><div class="language_name" id="language_name">TH</div>')
+        }
+      }
+      $('#ruLanguage').click(function() {
+        localStorage.setItem("language", "Russian");
+        $('#currentLanguage').html('<div class="language_flag"><img src="/img/icons/russian.svg" alt="" id="language_flag"></div><div class="language_name" id="language_name">RU</div>')
+        setLanguages(getLanguage(localStorage.getItem("language")))
+      })
+      $('#enLanguage').click(function() {
+        localStorage.setItem("language", "English");
+        $('#currentLanguage').html('<div class="language_flag"><img src="/img/icons/usa.svg" alt="" id="language_flag"></div><div class="language_name" id="language_name">EN</div>')
+        setLanguages(getLanguage(localStorage.getItem("language")))
+      })
+      $('#thLanguage').click(function() {
+        localStorage.setItem("language", "Thai");
+        $('#currentLanguage').html('<div class="language_flag"><img src="/img/icons/thailand.png" alt="" id="language_flag"></div><div class="language_name" id="language_name">TH</div>')
+        setLanguages(getLanguage(localStorage.getItem("language")))
+      })
+      $('#searchOffer').click(function(){
+        setLanguages(getLanguage(localStorage.getItem("language")))
+      })
+      $('#searchRequest').click(function() {
+        setLanguages(getLanguage(localStorage.getItem("language")))
+      })
+
+      jQuery('#query-form').yiiActiveForm([], []);
+      jQuery('#query-form2').yiiActiveForm([], []);
+      window.alert_sended = 'Message sended';
+      jQuery('#recovery_pass_form').yiiActiveForm([{
+        "id": "passwordresetrequestform-email",
+        "name": "email",
+        "container": ".field-passwordresetrequestform-email",
+        "input": "#passwordresetrequestform-email",
+        "error": ".help-block.help-block-error",
+        "validate": function(attribute, value, messages, deferred, $form) {
+          value = yii.validation.trim($form, attribute, []);
+          yii.validation.required(value, messages, {
+            "message": "Email cannot be blank."
+          });
+          yii.validation.email(value, messages, {
+            "pattern": /^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,
+            "fullPattern": /^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,
+            "allowName": false,
+            "message": "Email is not a valid email address.",
+            "enableIDN": false,
+            "skipOnEmpty": 1
+          });
+        }
+      }], []);
+      jQuery(document).pjax("#reset_password a", {
+        "skipOuterContainers": true,
+        "push": false,
+        "replace": false,
+        "timeout": 1000,
+        "scrollTo": false,
+        "container": "#reset_password"
+      });
+      jQuery(document).on("submit", "#reset_password form[data-pjax]", function(event) {
+        jQuery.pjax.submit(event, {
+          "skipOuterContainers": true,
+          "push": false,
+          "replace": false,
+          "timeout": 1000,
+          "scrollTo": false,
+          "container": "#reset_password"
+        });
+      });
+      jQuery('#feedback_form').yiiActiveForm([], []);
+      $("#feedback_form").bind('ajax:complete', function() {
+        console.log('1111')
+      });
+
+      if (jQuery('#ccwidget_country_5ba269f6ccea4').data('select2')) { jQuery('#ccwidget_country_5ba269f6ccea4').select2('destroy'); }
+      jQuery.when(jQuery('#ccwidget_country_5ba269f6ccea4').select2(select2_766d2513)).done(initS2Loading('ccwidget_country_5ba269f6ccea4','s2options_d6851687'));
+      jQuery('#ccwidget_country_5ba269f6ccea4').on('change', function() {
+                                  $('#ccwidget_city_5ba269f6ccea4').val('');
+                                  $('#ccwidget_google_place_5ba269f6ccea4').val('').trigger('change');
+
+                                  var disabled = ($(this).val() == '');
+                                  $('#ccwidget_google_place_5ba269f6ccea4').prop('disabled', disabled);
+                              });
+
+      if (jQuery('#ccwidget_google_place_5ba269f6ccea4').data('select2')) { jQuery('#ccwidget_google_place_5ba269f6ccea4').select2('destroy'); }
+      jQuery.when(jQuery('#ccwidget_google_place_5ba269f6ccea4').select2(select2_a5d6c3cb)).done(initS2Loading('ccwidget_google_place_5ba269f6ccea4','s2options_d6851687'));
+      jQuery('#ccwidget_google_place_5ba269f6ccea4').on('change', function() {
+                                  $('#ccwidget_city_5ba269f6ccea4').val($('option:selected', this).text());
+                              });
+
+      jQuery('#work_tags_autocomplete_input').autocomplete({"minLength":3,"focus":
+                                      function(event, ui) {
+                                          $(this).val(ui.item.label);
+                                          return false;
+                                      }
+                                  ,"select":
+                                      function(event, ui) {
+                                          addNewTag(ui.item.label, ui.item.value);
+                                          return false;
+                                      }
+                                  ,"source":
+                                      function(request, response){
+                                          $.ajax({
+                                              url: "/en/auxx/get-tags-for-autocomplete",
+                                              type: "get",
+                                              dataType: "json",
+                                              async: false,
+                                              data: { name: request.term },
+                                              success: function(data) {
+                                                  response(data);
+                                              }
+                                          });
+                                      }
+                                  });
+          $(document).on('keypress', '#work-form input', function(e){
+              if(e.keyCode == 13) {
+                          e.preventDefault();
+              }
+          });
+
+          $(document).on('submit', '#work-form', function() {
+              var errorBlock = $('.error-summary', $(this));
+              var dataBlock = $('.work-request-form');
+              var data = $(this).serialize();
+              $.post($(this).attr('action'), data, function(res) {
+                  errorBlock.html('');
+                  if(res.result && res.result === "ERROR"){
+                      errorBlock.show();
+                      var errors = res.message;
+                      $.each(errors, function(i, e) {
+                        errorBlock.append("<p>"+e[0]+"</p>");
+                      })
+                  }  else {
+                      window.location.reload();
+                  }
+              });
+              return false;
+          });
+
+
+          $("body").on("change", "#work-country_id", function() {
+              $("#work-city_google_place_id, #work-city_name").val("");
+
+              if ($(this).val() == "") {
+                  $("#work-city_name").prop("disabled", true);
+              } else {
+                  $("#work-city_name").prop("disabled", false);
+              }
+          });
+          $("body").on("click", ".tag_plus", function(e) {
+
+              if ( $('#work_tags_autocomplete_input').val().trim() == "" ) return;
+
+              var data = {tag_name: $('#work_tags_autocomplete_input').val()};
+              $.post("/en/auxx/create-new-tag", data, function(response) {
+                  if (response.newTagId != undefined) {
+                      addNewWorkTag(data.tag_name, response.newTagId);
+                  }
+              });
+
+              return false;
+          });
+          $("body").on("click", ".delete_tag", function(e) {
+              e.preventDefault();
+              $(this).closest(".hashtag").remove();
+          })
+      jQuery('#workcreate').yiiActiveForm([], []);
+      jQuery('#query-form').yiiActiveForm([], []);
+      window.alert_sended = 'Message sended';
+      jQuery('#feedback_form').yiiActiveForm([], []);
+             $("#feedback_form").bind('ajax:complete', function() {
+
+               console.log('1111')
+         });
+    });
+    var anonymousUserID = sessionStorage.getItem("bbp_anonymous-user-id");
+    if (anonymousUserID) {
+      anonymousUserID = +anonymousUserID;
+
+      new io("https://chat.bankofpartners.com?userID=" + anonymousUserID + "&consultant=false&anonymous=true");
+    }
+    $('.viewform_next').click(function() {
+      var data = $(this).data('next');
+      $(this).hide();
+      $('#'+data).fadeIn('slow');
+      scrollToDestiny(data);
+      $('.viewform_left_item').removeClass('active');
+      $('.viewform_left').find('*[data-next='+data+']').addClass('active');
+      $('.viewform_2').find('*[data-next='+data+']').addClass('active');
+    });
+    $( '.viewform_left_item').click(function() {
+        var data = $(this).data('next');
+        if ($('#'+data).is(":visible")){
+            scrollToDestiny(data);
+        }
+    });
+    function scrollToDestiny (target) {
+        $('html, body').animate({
+            scrollTop: $('#'+ target).offset().top
+        }, 2000);
+    }
+
+    $('.viewform_left_item_1').click(function() {
+      $('.viewform_left_item_1').addClass('active');
+      $('.viewform_left_item_2').removeClass('active');
+      $('.viewform_left_item_3').removeClass('active');
+    })
+    $('.viewform_left_item_2').click(function() {
+      $('.viewform_left_item_2').addClass('active');
+      $('.viewform_left_item_1').removeClass('active');
+      $('.viewform_left_item_3').removeClass('active');
+    })
+    $('.viewform_left_item_3').click(function() {
+      $('.viewform_left_item_3').addClass('active');
+      $('.viewform_left_item_2').removeClass('active');
+      $('.viewform_left_item_1').removeClass('active');
+    })
+
+    function searchNow() {
+      var search = $('#query-input').val().trim();
+      if(search != "") {
+        $.extend($.expr[':'], {
+          'containsi': function(elem, i, match, array) {
+            return (elem.textContent || elem.innerText || '').toLowerCase()
+                .indexOf((match[3] || "").toLowerCase()) >= 0;
+          }
+        });
+        $(".suggestions_services_item").hide().filter(':containsi("' + search + '")').show();
+        $(".searching-lg-4").hide().filter(':containsi("' + search + '")').show();
+        $(".service-request-card").hide().filter(':containsi("' + search + '")').show();
+      }
+    }
+
+
+
+  </script>
+</body>
+</html>

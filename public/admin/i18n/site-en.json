@@ -1,0 +1,87 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile",
+    "PROFILEDES": "Make a changes",
+    "LOGOUT": "Logout",
+    "LOGOUTDES": "Leave admin"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!"
+  },
+  "category": {
+    "TITLE": "Add New Category",
+    "FORM": {
+      "CATEGORY-NAME": "Category Name",
+      "BUTTON": "ADD"
+    }
+  },
+  "about": {
+    "HEAD": "Edit About Content",
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "BUTTON": "Change"
+  },
+  "sitesetting": {
+    "HEAD": "Change Site Setting",
+    "TITLE": "Blog Title",
+    "LOGO": "BLog Logo",
+    "BUTTON": "Change"
+  },
+  "profile": {
+    "HEAD": "My Profile",
+    "UPLOAD-IMAGE": "Upload Image",
+    "CHANGE-PHOTO": "Change Photo",
+    "NAME": "User Name",
+    "EMAIL": "Email",
+    "QUESTION": "Security Question",
+    "ANSWER": "Answer",
+    "BUTTON-CHANGE": "Change",
+    "CHANGE-PASSWORD": "Change Password",
+    "PASSWORD": "Password",
+    "NEW-PASSWORD": "New Password",
+    "CONFIRM-PASSWORD": "Confirm Password",
+    "SAVE-PASSWORD": "Save Password"
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard",
+      "CATEGORY": "Manage Category",
+      "category-content": {
+        "ADD": "Add Category",
+        "VIEW": "View Categories"
+      },
+      "POST": "Manage Post",
+      "post-content": {
+        "ADD": "Add Post",
+        "VIEW": "View Posts"
+      },
+      "ADMIN": "Manage Admin",
+      "admin-content": {
+        "ADD": "Add Admin",
+        "VIEW": "View Admins"
+      },
+      "USER": "Manage User",
+      "user-content": {
+        "USER": "View Users",
+        "POST": "View Posts"
+      },
+      "ABOUT": "Manage About",
+      "CONTACT": "Manage Contact",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation",
+        "MESSAGE": "Contact Messages"
+      },
+      "SITE": "Site Setting",
+      "site-content": {
+        "SETTING": "Change Setting"
+      },
+      "SETTING": "Admin Setting",
+      "setting-content": {
+        "PROFILE": "Edit Profile"
+      }
+    }
+  }
+}

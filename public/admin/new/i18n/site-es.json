@@ -1,0 +1,71 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile-Thai",
+    "PROFILEDES": "Make a changes-Thai",
+    "LOGOUT": "Logout-Thai",
+    "LOGOUTDES": "Leave admin-Thai"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!-Thai"
+  },
+  "new": {
+    "ADD": {
+      "HEAD": "Add New Post-Thai",
+      "NAME": "User Name-Thai",
+      "EMAIL": "Email-Thai",
+      "PASSWORD": "Password-Thai",
+      "CONFIRM-PASSWORD": "Confirm Password-Thai",
+      "BUTTON": "ADD-Thai"
+    },
+    "VIEW": {
+      "HEAD": "View Admins-Thai",
+      "SNO": "S.no-Thai",
+      "NAME": "User Name-Thai",
+      "EMAIL": "Email-Thai",
+      "ROLE": "Role-Thai",
+      "DELETEBUTTON": "Remove-Thai"
+    }
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation-Thai"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard-Thai",
+      "CATEGORY": "Manage Category-Thai",
+      "category-content": {
+        "ADD": "Add Category-Thai",
+        "VIEW": "View Categories-Thai"
+      },
+      "POST": "Manage Post-Thai",
+      "post-content": {
+        "ADD": "Add Post-Thai",
+        "VIEW": "View Posts-Thai"
+      },
+      "ADMIN": "Manage Admin-Thai",
+      "admin-content": {
+        "ADD": "Add Admin-Thai",
+        "VIEW": "View Admins-Thai"
+      },
+      "USER": "Manage User-Thai",
+      "user-content": {
+        "USER": "View Users-Thai",
+        "POST": "View Posts-Thai"
+      },
+      "ABOUT": "Manage About-Thai",
+      "CONTACT": "Manage Contact-Thai",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation-Thai",
+        "MESSAGE": "Contact Messages-Thai"
+      },
+      "SITE": "Site Setting-Thai",
+      "site-content": {
+        "SETTING": "Change Setting-Thai"
+      },
+      "SETTING": "Admin Setting-Thai",
+      "setting-content": {
+        "PROFILE": "Edit Profile-Thai"
+      }
+    }
+  }
+}

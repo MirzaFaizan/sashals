@@ -1,0 +1,80 @@
+{
+  "navuserdialog": {
+    "PROFILE": "Profile",
+    "PROFILEDES": "Make a changes",
+    "LOGOUT": "Logout",
+    "LOGOUTDES": "Leave admin"
+  },
+  "dashboard": {
+    "WELCOME": "Welcome to Admin Panel!"
+  },
+  "contact": {
+    "EDIT": {
+      "HEAD": "Edit Contact",
+      "ADDRESS": "Address",
+      "PHONE": "Phone",
+      "EMAIL": "Email",
+      "BUTTON": "Change"
+    },
+    "MESSAGE": {
+      "HEAD": "View Contact Message",
+      "SNO": "S.no",
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "MESSAGE": "Message",
+      "DELETEBUTTON": "Remove"
+    },
+    "VIEW": {
+      "HEAD": "View Admin Posts",
+      "SNO": "S.no",
+      "TITLE": "Title",
+      "DESCRIPTION": "Description",
+      "CATEGORY": "Category",
+      "IMAGE": "Image",
+      "EDITBUTTON": "Edit",
+      "DELETEBUTTON": "Delete"
+    }
+  },
+  "sidebar": {
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "DASHBOARD": "Dashboard",
+      "CATEGORY": "Manage Category",
+      "category-content": {
+        "ADD": "Add Category",
+        "VIEW": "View Categories"
+      },
+      "POST": "Manage Post",
+      "post-content": {
+        "ADD": "Add Post",
+        "VIEW": "View Posts"
+      },
+      "ADMIN": "Manage Admin",
+      "admin-content": {
+        "ADD": "Add Admin",
+        "VIEW": "View Admins"
+      },
+      "USER": "Manage User",
+      "user-content": {
+        "USER": "View Users",
+        "POST": "View Posts"
+      },
+      "ABOUT": "Manage About",
+      "CONTACT": "Manage Contact",
+      "contact-content": {
+        "INFORMATION": "Contact Infomation",
+        "MESSAGE": "Contact Messages"
+      },
+      "SITE": "Site Setting",
+      "site-content": {
+        "SETTING": "Change Setting"
+      },
+      "SETTING": "Admin Setting",
+      "setting-content": {
+        "PROFILE": "Edit Profile"
+      }
+    }
+  }
+}

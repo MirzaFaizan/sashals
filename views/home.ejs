@@ -1,0 +1,167 @@
+<div class="jumbo_contagent">
+  <a href="#" class="jumbo_contagent_banner">
+    <img class="jumbo_contagent_banner_img_1" src="https://bankofpartners.com/img/verification/check-company.png" alt="">
+    <span class="jumbo_contagent_banner_text_1">Counterparty <br> verification</span>
+    <span class="jumbo_contagent_banner_text_2">Minimize business risks.<br> Check counterparty for free</span>
+    <img class="jumbo_contagent_banner_img_2" src="https://bankofpartners.com/img/verification/arrow3.svg" alt="">
+  </a>
+</div>
+<div class="jumbo">
+<!--<video src="//ngimg-1.bankofpartners.com/sber_planet_m4v_1.mp4" autoplay="autoplay" muted="muted" loop="loop" poster="/img/home/j.jpg">
+  </video>-->
+  <div class="container">
+    <div class="jumbo_text">
+      Free platform for searching and selling goods and services all over the world </div>
+    <div class="jumbo_form">
+
+      <form onsubmit="event.preventDefault(); searchNow(this)" id="query-form" class="head_search search-row__form" >
+        <div class="jumbo_form_search">
+          <input type="text" id="query-input" name="q" value="" placeholder="What are you searching for?">
+          <button type="submit">
+            <img src="/img/home/search.svg" alt="">
+            <img src="/img/home/search_hover.svg" alt="">
+          </button>
+        </div>
+        <div class="jumbo_form_dropdown">
+          <div class="dropdown_btn">
+            <span>offers</span>
+            <img src="/img/home/dropdown.svg" alt="">
+          </div>
+          <div class="dropdown_menu">
+            <ul>
+              <li id="sel_1">
+                <button type="button" class="search-row__dropdown-button" data-option="services" data-url="/en/service/search" id="searchOffer">
+                  offers </button>
+              </li>
+              <li id="sel_2">
+                <button type="button" class="search-row__dropdown-button" data-option="requests" data-url="/en/work-request/index" id="searchRequest">
+                  requests </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="main_content">
+
+  <section class="suggestions showoffer">
+    <div class="container">
+      <div class="suggestions_h">Recent offers</div>
+      <div class="suggestions_services">
+        <%offers.forEach(function(data) {%>
+          <div class="suggestions_services_item">
+            <div class="suggestions_services_item_img">
+              <a class="service_img " href="/offer/view?id=<%= data._id%>" style="background-image: url(/uploads/offer/<%= data.image%>)"></a>
+              <div class="deal_count"></div>
+              <a class="service_img_fronter " href="/offer/view?id=<%= data._id%>"></a>
+            </div>
+            <div class="suggestions_services_item_text">
+              <h2><a href="/offer/view?id=<%= data._id%>"><%= data.title%></a></h2>
+              <p>
+                <%= data.description%>
+              </p>
+              <div class="price">
+                from
+                <%= data.price%>&nbsp;
+                  <span>
+                  <i class="<%= (data.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                  <i class="<%= (data.currency == 'Baht')?'fa fa-money':''%>"></i>
+                  <i class="<%= (data.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                </span>
+              </div>
+            </div>
+            <div class="suggestions_services_item_operator">
+              <div class="suggestions_services_item_operator_img">
+                <% let temp = 0;%>
+                  <%userData.forEach(function(user) {%>
+                    <%if(user._id == data.userId){ temp=1;%>
+                      <div class="service-request-card__user-avatar" style="background-image: url(/uploads/users/<%= user.image%>); width: 100%; height: 100%"></div>
+                      <%}%>
+                        <%})%>
+                          <%if(temp=0){%>
+                            <i class="icon icon_user suggestions_icon_default"></i>
+                            <%}%>
+              </div>
+              <div class="suggestions_services_item_operator_text">
+                <div class="oper_name">
+                  <%userData.forEach(function(user) {%>
+                    <%if(user._id == data.userId){%>
+                      <a href="/users/profile?id=<%= data.userId%>">
+                        <%= user.fname%>
+                          <%= user.lname%>
+                      </a>
+                      <%}%>
+                        <%})%>
+                </div>
+                <div class="oper_town">
+                  <span><%= data.country%></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%})%>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="suggestions showrequest">
+    <div class="container">
+      <div class="suggestions_h">Recent Request</div>
+      <div class="suggestions_services">
+        <%requests.forEach(function(data) {%>
+          <div class="suggestions_services_item">
+            <div class="suggestions_services_item_text">
+              <h2><a href="/request/view?id=<%= data._id%>"><%= data.title%></a></h2>
+              <p>
+                <%= data.description%>
+              </p>
+              <div class="price">
+                from
+                <%= data.price%>&nbsp;
+                  <span>
+                  <i class="<%= (data.currency == 'Dollars')?'fa fa-dollar-sign':''%>"></i>
+                  <i class="<%= (data.currency == 'Euro')?'fa fa-euro-sign':''%>"></i>
+                  <i class="<%= (data.currency == 'Baht')?'fa fa-money':''%>"></i>
+                  <i class="<%= (data.currency == 'Rubles')?'fa fa-ruble-sign':''%>"></i>
+                </span>
+              </div>
+            </div>
+            <div class="suggestions_services_item_operator">
+              <div class="suggestions_services_item_operator_img">
+                <%let count = 0;%>
+                  <%userData.forEach(function(user) {%>
+                    <%if(user._id == data.userId){count=1%>
+                      <div class="service-request-card__user-avatar" style="background-image: url(/uploads/users/<%= user.image%>); width: 100%; height: 100%"></div>
+                      <%}%>
+                        <%})%>
+                          <%if(count == 0){%>
+                            <i class="icon icon_user suggestions_icon_default"></i>
+                            <%}%>
+              </div>
+              <div class="suggestions_services_item_operator_text">
+                <div class="oper_name">
+                  <%userData.forEach(function(user) {%>
+                    <%if(user._id == data.userId){%>
+                      <a href="/users/profile?id=<%= data.userId%>">
+                        <%= user.fname%>
+                          <%= user.lname%>
+                      </a>
+                      <%}%>
+                        <%})%>
+                </div>
+                <div class="oper_town">
+                  <span><%= data.country%></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%})%>
+      </div>
+    </div>
+  </section>
+
+</div>
